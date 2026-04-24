@@ -1,0 +1,289 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e8]:
+      - link [ref=e9] [cursor=pointer]:
+        - /url: ./
+      - img [ref=e16] [cursor=pointer]
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - heading "Ship Better Products, Faster, With AI-Native Design & Development" [level=1] [ref=e22]
+        - paragraph [ref=e25]: We blend design, engineering, and AI to deliver better outcomes, faster. Transform your ideas into intelligent digital products.
+      - list [ref=e31]:
+        - listitem [ref=e32]
+        - listitem [ref=e36]
+        - listitem [ref=e40]
+        - listitem [ref=e44]
+        - listitem [ref=e48]
+        - listitem [ref=e52]
+        - listitem [ref=e56]
+        - listitem [ref=e60]
+        - listitem [ref=e64]
+        - listitem [ref=e68]
+        - listitem [ref=e72]
+        - listitem [ref=e76]
+        - listitem [ref=e80]
+        - listitem [ref=e84]
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - heading "We Build Intelligent Products That Transform Businesses" [level=2] [ref=e93]
+        - paragraph [ref=e96]: We blend design, engineering, and AI to deliver better outcomes, faster. Transform your ideas into intelligent digital products.
+      - list [ref=e100]:
+        - listitem [ref=e101]:
+          - img [ref=e105]
+        - listitem [ref=e107]:
+          - img [ref=e111]
+        - listitem [ref=e113]:
+          - img [ref=e117]
+        - listitem [ref=e119]:
+          - img [ref=e123]
+        - listitem [ref=e125]:
+          - img [ref=e129]
+        - listitem [ref=e131]:
+          - img [ref=e135]
+        - listitem [ref=e137]:
+          - img [ref=e141]
+        - listitem [ref=e143]:
+          - img [ref=e147]
+        - listitem [ref=e149]
+        - listitem [ref=e152]:
+          - img [ref=e156]
+        - listitem [ref=e158]
+        - listitem [ref=e162]:
+          - img [ref=e166]
+        - listitem [ref=e168]:
+          - img [ref=e172]
+        - listitem [ref=e174]:
+          - img [ref=e178]
+        - listitem [ref=e180]:
+          - img [ref=e184]
+        - listitem [ref=e186]:
+          - img [ref=e190]
+        - listitem [ref=e192]:
+          - img [ref=e196]
+        - listitem [ref=e198]:
+          - img [ref=e202]
+        - listitem [ref=e204]:
+          - img [ref=e208]
+        - listitem [ref=e210]
+        - listitem [ref=e213]:
+          - img [ref=e217]
+        - listitem [ref=e219]
+        - listitem [ref=e223]:
+          - img [ref=e227]
+        - listitem [ref=e229]:
+          - img [ref=e233]
+        - listitem [ref=e235]:
+          - img [ref=e239]
+        - listitem [ref=e241]:
+          - img [ref=e245]
+        - listitem [ref=e247]:
+          - img [ref=e251]
+        - listitem [ref=e253]:
+          - img [ref=e257]
+        - listitem [ref=e259]:
+          - img [ref=e263]
+        - listitem [ref=e265]:
+          - img [ref=e269]
+        - listitem [ref=e271]
+        - listitem [ref=e274]:
+          - img [ref=e278]
+        - listitem [ref=e280]
+    - generic [ref=e285]:
+      - generic [ref=e286]:
+        - generic [ref=e287]:
+          - heading "From Idea to Intelligence, Our Capabilities" [level=2] [ref=e289]:
+            - text: From Idea to Intelligence,
+            - text: Our Capabilities
+          - paragraph [ref=e291]: We integrate design, development, and AI into every layer of your product journey.
+        - link "View Capabilities ->" [ref=e294]:
+          - /url: ./ai-native-capabilities
+          - paragraph [ref=e296]: View Capabilities
+          - paragraph [ref=e298] [cursor=pointer]: "->"
+      - generic [ref=e299]:
+        - generic [ref=e304]:
+          - generic [ref=e305]:
+            - heading "Launch Your Big Idea" [level=6] [ref=e307]
+            - paragraph [ref=e309]: MVP Development
+          - generic [ref=e310]:
+            - paragraph [ref=e311]: Quickly validate a new product concept & gather real user feedback without overspending.
+            - paragraph [ref=e312]: A focused Minimum Viable Product (MVP) designed to test core hypotheses and gather crucial feedback.
+        - generic [ref=e317]:
+          - generic [ref=e318]:
+            - heading "Assisting Ongoing Work" [level=6] [ref=e320]
+            - paragraph [ref=e322]: Ongoing Maintenance
+          - generic [ref=e323]:
+            - paragraph [ref=e324]: Ensure your critical applications remain stable, performant, and receive timely updates or minor feature enhancements.
+            - paragraph [ref=e325]: "Reliable upkeep: Proactive monitoring, maintenance, bug fixing, and feature enhancements."
+        - generic [ref=e330]:
+          - generic [ref=e331]:
+            - heading "Modernize Your Technology" [level=6] [ref=e333]
+            - paragraph [ref=e335]: App Modernization
+          - generic [ref=e336]:
+            - paragraph [ref=e337]: Overcome limitations of outdated software – improve speed, scalability, and user experience.
+            - paragraph [ref=e338]: A revitalized, modern application built on a robust foundation.
+        - generic [ref=e343]:
+          - generic [ref=e344]:
+            - heading "Integrate Intelligence" [level=6] [ref=e346]
+            - paragraph [ref=e348]: AI Feature Implementation
+          - generic [ref=e349]:
+            - paragraph [ref=e350]: Seamless integration of AI/ML capabilities into your applications.
+            - paragraph [ref=e351]: Make your software smarter – leverage data for predictions, automate tasks, or create personalized user experiences.
+    - generic [ref=e353]:
+      - generic [ref=e354]:
+        - heading "Real Results, Real Impact" [level=2] [ref=e356]
+        - paragraph [ref=e358]: Every project tells a story. See how we've helped businesses transform their ideas into reality
+      - generic [ref=e361]:
+        - generic [ref=e362]:
+          - generic [ref=e365]:
+            - paragraph [ref=e367]: MeLiSA
+            - heading "Enabling efficient medical simulation support services" [level=3] [ref=e369]
+          - generic [ref=e374]:
+            - paragraph [ref=e376]: 911Switch
+            - heading "In an emergency be seen, first response lighting solutions" [level=3] [ref=e378]
+        - generic [ref=e381]:
+          - link "JabFab Real-Time and Reflective Experience Optimization Platform" [ref=e382] [cursor=pointer]:
+            - /url: ./project-jabfab
+            - generic [ref=e383]:
+              - paragraph [ref=e385]: JabFab
+              - heading "Real-Time and Reflective Experience Optimization Platform" [level=3] [ref=e387]
+          - generic [ref=e392]:
+            - paragraph [ref=e394]: Predictr
+            - heading "Skill-Based Stock Prediction Platform for Traders and Learners" [level=3] [ref=e396]
+    - generic [ref=e400]:
+      - generic [ref=e401]:
+        - heading "Trusted by Forward-Thinking Teams" [level=4] [ref=e403]
+        - paragraph [ref=e405]: Don't just take our word for it. Here's what our clients say about working with us.
+      - generic [ref=e408]:
+        - list [ref=e410]:
+          - listitem [ref=e411]:
+            - generic [ref=e413]:
+              - paragraph [ref=e415]: "\"Worked with Buzzinga on our product design. Truly impressed by their grasp of our brand and attention to detail. Designs are beautiful and user-centric. Highly responsive and proactive. Highly recommend.\""
+              - generic [ref=e416]:
+                - paragraph [ref=e418]: Arne Wolfewicz
+                - paragraph [ref=e420]: Narratic Labs
+          - listitem [ref=e421]:
+            - generic [ref=e423]:
+              - paragraph [ref=e425]: "\"Buzzinga is aesthetic, innovative, and deeply thoughtful in their approach. The design and theme finalization process was smooth and impactful. They don’t just create graphics—they help build your brand. Even post-delivery, they’re attentive and committed. Great work!\""
+              - generic [ref=e426]:
+                - paragraph [ref=e428]: Dhaumil Parmar
+                - paragraph [ref=e430]: Redicine Medsol
+          - listitem [ref=e431]:
+            - generic [ref=e433]:
+              - paragraph [ref=e435]: "\"Services are exceptional. They brought immense value through understanding what we do and seeing what needs to be done. I’ve worked with countless people and Buzzinga is most likely the best. Intelligent. Competent. Exceptional human.\""
+              - generic [ref=e436]:
+                - paragraph [ref=e438]: Trevor Burgeron
+                - paragraph [ref=e440]: WozJobs Inc
+          - listitem [ref=e441]:
+            - generic [ref=e443]:
+              - paragraph [ref=e445]: "\"I cannot praise Buzzinga enough for their exceptional consultation on our app dashboard building. Their work ethics are outstanding, with attention to detail and a user-centric approach. They delivered on time, and the quality exceeded expectations. Working with them was a breeze.\""
+              - generic [ref=e446]:
+                - paragraph [ref=e448]: Punit Kumar
+                - paragraph [ref=e450]: Zigzek
+        - group "Slideshow pagination controls":
+          - generic [ref=e451]:
+            - button "Scroll to page 1" [ref=e452] [cursor=pointer]
+            - button "Scroll to page 2" [ref=e454] [cursor=pointer]
+            - button "Scroll to page 3" [ref=e456] [cursor=pointer]
+            - button "Scroll to page 4" [ref=e458] [cursor=pointer]
+            - button "Scroll to page 5" [ref=e460] [cursor=pointer]
+            - button "Scroll to page 6" [ref=e462] [cursor=pointer]
+            - button "Scroll to page 7" [ref=e464] [cursor=pointer]
+            - button "Scroll to page 8" [ref=e466] [cursor=pointer]
+            - button "Scroll to page 9" [ref=e468] [cursor=pointer]
+            - button "Scroll to page 10" [ref=e470] [cursor=pointer]
+    - generic [ref=e472]:
+      - img [ref=e475]
+      - generic [ref=e476]:
+        - generic [ref=e477]:
+          - heading "Why Clients Stay With Us" [level=2] [ref=e479]
+          - generic [ref=e482]:
+            - paragraph [ref=e483]: Because our partnership built on a different set of principles.
+            - paragraph [ref=e484]: The traditional trap is systemic, but our commitment is absolute.
+          - link "View Capabilities ->" [ref=e487]:
+            - /url: ./ai-native-capabilities
+            - paragraph [ref=e489]: View Capabilities
+            - paragraph [ref=e491] [cursor=pointer]: "->"
+        - generic [ref=e492]:
+          - generic [ref=e493]:
+            - img [ref=e496]
+            - generic [ref=e498]:
+              - paragraph [ref=e500]: 100% Reliable
+              - paragraph [ref=e502]: You will always know what to expect and what not to.
+          - generic [ref=e503]:
+            - img [ref=e506]
+            - generic [ref=e508]:
+              - paragraph [ref=e510]: 5 Stars for Ease
+              - paragraph [ref=e512]: Easy to work with is an underrated skill but our clients can vouch for that.
+        - generic [ref=e513]:
+          - generic [ref=e514]:
+            - img [ref=e517]
+            - generic [ref=e519]:
+              - paragraph [ref=e521]: Quick Turnaround
+              - paragraph [ref=e523]: with clear communication in this more digital and less physical world.
+          - generic [ref=e524]:
+            - img [ref=e527]
+            - generic [ref=e529]:
+              - paragraph [ref=e531]: Our Dream
+              - paragraph [ref=e533]: We help our clients to fulfil their dreams, that’s what we want to do for life.
+    - generic [ref=e535]:
+      - generic [ref=e536]:
+        - heading "Start Your Next Journey With Us" [level=2] [ref=e538]
+        - paragraph [ref=e540]: Need a quick quote, a free 30‑min consultation, or just want to learn more? Drop your details, and we’ll be in touch within 24 working hours to set up a call.
+      - generic [ref=e541]:
+        - generic [ref=e542]:
+          - paragraph [ref=e544]: What are you interested in?*
+          - combobox "What are you interested in?*" [ref=e546]:
+            - option "Select…" [disabled] [selected]
+            - option "I want a free 30-minute consultation"
+            - option "I’m looking for a project quote"
+            - option "I’m exploring long-term partnership opportunities"
+            - option "I’m just curious to learn more about your work & services"
+        - generic [ref=e547]:
+          - paragraph [ref=e549]: What stage are you in your AI journey?*
+          - combobox "What stage are you in your AI journey?*" [ref=e551]:
+            - option "Select…" [disabled] [selected]
+            - option "We are in early exploratory phase. Need AI partner to guide us."
+            - option "We have a fair understanding of what we want to accomplish. Need to start with the AI discovery phase."
+            - option "We have the team and budget to build the AI solution. We need a AI development partner to execute the project."
+            - option "We’re not exploring AI developments at the moment."
+        - generic [ref=e552]:
+          - generic [ref=e553]:
+            - paragraph [ref=e555]: Name*
+            - textbox "Name*" [ref=e557]:
+              - /placeholder: ""
+          - generic [ref=e558]:
+            - paragraph [ref=e560]: Email*
+            - textbox "Email*" [ref=e562]:
+              - /placeholder: ""
+        - generic [ref=e563]:
+          - paragraph [ref=e565]: Briefly describe your project—goals, challenges, and requirements, to help us assist you more effectively during our initial call.*
+          - textbox "Briefly describe your project—goals, challenges, and requirements, to help us assist you more effectively during our initial call.*" [ref=e567]:
+            - /placeholder: ""
+        - button "Submit" [ref=e570] [cursor=pointer]:
+          - paragraph [ref=e572]: Submit
+    - generic [ref=e576]:
+      - generic [ref=e578]:
+        - generic [ref=e580]:
+          - paragraph [ref=e581]: AI-native design and development
+          - paragraph [ref=e582]: for businesses that move fast.
+        - generic [ref=e584]:
+          - paragraph [ref=e585]: write us on
+          - paragraph [ref=e586]: hello@buzzinga.co
+        - paragraph [ref=e589]:
+          - text: © 2025 Buzzinga Co.
+          - text: All Rights Reserved
+      - paragraph [ref=e591]: Buzzinga Co.
+  - img [ref=e592]
+  - img [ref=e607]
+  - img [ref=e618]
+  - img [ref=e627]
+  - img [ref=e637]
+  - img [ref=e674]
+  - img [ref=e687]
+  - img [ref=e702]
+  - img [ref=e730]
+  - img [ref=e745]
+  - img [ref=e746]
+  - img [ref=e753]
+  - img [ref=e763]
+  - img [ref=e794]

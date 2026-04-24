@@ -1,0 +1,45 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Buzzinga Co." [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Buzzinga Co." [ref=e6]
+        - button "Toggle navigation menu" [ref=e7]
+    - main [ref=e11]:
+      - generic [ref=e12]:
+        - generic [ref=e13]:
+          - heading "Ship Better Products, Faster, With AI‑Native Design & Development" [level=1] [ref=e14]:
+            - text: Ship Better Products, Faster,
+            - text: With AI‑Native Design & Development
+          - generic [ref=e15]:
+            - paragraph [ref=e16]: We blend design, engineering, and AI to deliver better outcomes, faster.
+            - paragraph [ref=e17]: Transform your ideas into intelligent digital products.
+        - generic [ref=e19]:
+          - img "Project mockup 1" [ref=e21]
+          - img "Project mockup 2" [ref=e23]
+          - img "Project mockup 3" [ref=e25]
+          - img "Project mockup 4" [ref=e27]
+          - img "Project mockup 5" [ref=e29]
+          - img "Project mockup 6" [ref=e31]
+          - img "Project mockup 7" [ref=e33]
+          - img "Project mockup 1" [ref=e35]
+          - img "Project mockup 2" [ref=e37]
+          - img "Project mockup 3" [ref=e39]
+          - img "Project mockup 4" [ref=e41]
+          - img "Project mockup 5" [ref=e43]
+          - img "Project mockup 6" [ref=e45]
+          - img "Project mockup 7" [ref=e47]
+    - contentinfo [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - paragraph [ref=e51]: AI-native design and development for businesses that move fast.
+          - generic [ref=e52]:
+            - paragraph [ref=e53]: write us on
+            - link "hello@buzzinga.co" [ref=e54] [cursor=pointer]:
+              - /url: mailto:hello@buzzinga.co
+          - paragraph [ref=e55]: © 2025 Buzzinga Co. All Rights Reserved
+        - paragraph [ref=e56]: Buzzinga Co.
+  - button "Open Next.js Dev Tools" [ref=e62] [cursor=pointer]:
+    - img [ref=e63]
+  - alert [ref=e66]

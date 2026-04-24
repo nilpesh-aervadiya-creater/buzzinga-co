@@ -1,0 +1,57 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Buzzinga Co." [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Buzzinga Co." [ref=e6]
+        - navigation [ref=e7]:
+          - link "Home" [ref=e8] [cursor=pointer]:
+            - /url: /
+          - link "Our Approach" [ref=e9] [cursor=pointer]:
+            - /url: /ai-native-approach
+          - link "Capabilities" [ref=e10] [cursor=pointer]:
+            - /url: /ai-native-capabilities
+          - link "Projects" [ref=e11] [cursor=pointer]:
+            - /url: /projects
+          - link "About" [ref=e12] [cursor=pointer]:
+            - /url: /about
+        - link "Contact Us" [ref=e13] [cursor=pointer]:
+          - /url: /contact-buzzinga
+    - main [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - heading "Ship Better Products, Faster, With AI‑Native Design & Development" [level=1] [ref=e17]:
+            - text: Ship Better Products, Faster,
+            - text: With AI‑Native Design & Development
+          - generic [ref=e18]:
+            - paragraph [ref=e19]: We blend design, engineering, and AI to deliver better outcomes, faster.
+            - paragraph [ref=e20]: Transform your ideas into intelligent digital products.
+        - generic [ref=e22]:
+          - img "Project mockup 1" [ref=e24]
+          - img "Project mockup 2" [ref=e26]
+          - img "Project mockup 3" [ref=e28]
+          - img "Project mockup 4" [ref=e30]
+          - img "Project mockup 5" [ref=e32]
+          - img "Project mockup 6" [ref=e34]
+          - img "Project mockup 7" [ref=e36]
+          - img "Project mockup 1" [ref=e38]
+          - img "Project mockup 2" [ref=e40]
+          - img "Project mockup 3" [ref=e42]
+          - img "Project mockup 4" [ref=e44]
+          - img "Project mockup 5" [ref=e46]
+          - img "Project mockup 6" [ref=e48]
+          - img "Project mockup 7" [ref=e50]
+    - contentinfo [ref=e51]:
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - paragraph [ref=e54]: AI-native design and development for businesses that move fast.
+          - generic [ref=e55]:
+            - paragraph [ref=e56]: write us on
+            - link "hello@buzzinga.co" [ref=e57] [cursor=pointer]:
+              - /url: mailto:hello@buzzinga.co
+          - paragraph [ref=e58]: © 2025 Buzzinga Co. All Rights Reserved
+        - paragraph [ref=e59]: Buzzinga Co.
+  - button "Open Next.js Dev Tools" [ref=e65] [cursor=pointer]:
+    - img [ref=e66]
+  - alert [ref=e69]
