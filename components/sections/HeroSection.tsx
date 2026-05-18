@@ -2,32 +2,32 @@ import Image from "next/image";
 
 const STRIP_IMAGES = [
   {
-    src: "https://framerusercontent.com/images/370rfeFNz2cYfto2gCKBGECeVog.png",
-    alt: "Project mockup 1",
+    src: "/buzzinga-assets/images/hero/jabfab.png",
+    alt: "JabFab dashboard project preview",
   },
   {
-    src: "https://framerusercontent.com/images/GZCremxUgw8E3TZgTmqldkJjk.png",
-    alt: "Project mockup 2",
+    src: "/buzzinga-assets/images/hero/melisa.png",
+    alt: "MeLiSA mobile project preview",
   },
   {
-    src: "https://framerusercontent.com/images/KESQ5T0VbrrYFrLMb5hIZi49bw.png",
-    alt: "Project mockup 3",
+    src: "/buzzinga-assets/images/hero/911switch.png",
+    alt: "911Switch mobile project preview",
   },
   {
-    src: "https://framerusercontent.com/images/DNnqrde4oaZ8PQajUWJuFyseKN4.png",
-    alt: "Project mockup 4",
+    src: "/buzzinga-assets/images/hero/predictr.png",
+    alt: "Predictr mobile project preview",
   },
   {
-    src: "https://framerusercontent.com/images/2Wg4DC25OqS8CpM8LB7YkuE3sg.png",
-    alt: "Project mockup 5",
+    src: "/buzzinga-assets/images/hero/forecast.png",
+    alt: "Forecast dashboard project preview",
   },
   {
-    src: "https://framerusercontent.com/images/2mtwnLZ6IE4bb7WzbOxrImWjt8.png",
-    alt: "Project mockup 6",
+    src: "/buzzinga-assets/images/hero/zigzek.png",
+    alt: "Zigzek mobile project preview",
   },
   {
-    src: "https://framerusercontent.com/images/uDpy4D6ovXifBuJW174nfmp5M.png",
-    alt: "Project mockup 7",
+    src: "/buzzinga-assets/images/hero/additional-preview.png",
+    alt: "Additional project preview",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function HeroSection() {
 
       {/* Image marquee strip */}
       <div className="mt-20 overflow-hidden w-full">
-        <div className="flex gap-6 w-max animate-marquee">
+        <div className="hero-marquee-track flex gap-6 w-max">
           {MARQUEE_IMAGES.map((img, i) => (
             <div
               key={i}
@@ -70,7 +70,6 @@ export default function HeroSection() {
                 width={480}
                 height={366}
                 className="object-cover w-full h-full"
-                unoptimized
                 priority={i < 4}
               />
             </div>

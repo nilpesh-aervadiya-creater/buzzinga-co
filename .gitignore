@@ -12,6 +12,12 @@
 
 # testing
 /coverage
+/.playwright-cli/
+.playwright-mcp/
+
+# generated/reference screenshots
+/screenshots/**/*.png
+!/screenshots/README.md
 
 # next.js
 /.next/

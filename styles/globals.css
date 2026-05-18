@@ -1,7 +1,55 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Inter Display";
+  src: url("/buzzinga-assets/fonts/inter-display-400.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/buzzinga-assets/fonts/inter-display-500.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/buzzinga-assets/fonts/inter-display-600.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/buzzinga-assets/fonts/inter-display-700.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/buzzinga-assets/fonts/inter-display-400-italic.woff2") format("woff2");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/buzzinga-assets/fonts/inter-display-600-italic.woff2") format("woff2");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 600;
+}
+
 @theme {
-  --font-display: "Inter", sans-serif;
+  --font-display: "Inter Display", "Inter", sans-serif;
 
   --color-brand-dark: #262D30;
   --color-brand-gray: #F2F4F7;
@@ -20,7 +68,7 @@ html,
 body {
   background: #ffffff;
   color: #262D30;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter Display", "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,6 +83,37 @@ a {
   to   { transform: translateX(-50%); }
 }
 
-.animate-marquee {
+.hero-marquee-track {
   animation: marquee 35s linear infinite;
+  will-change: transform;
+}
+
+.logo-slider-track {
+  animation: marquee 34s linear infinite;
+  will-change: transform;
+}
+
+.logo-slider-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 12%,
+    rgba(0, 0, 0, 1) 88%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 12%,
+    rgba(0, 0, 0, 1) 88%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.project-scrollbar {
+  scrollbar-width: none;
+}
+
+.project-scrollbar::-webkit-scrollbar {
+  display: none;
 }
