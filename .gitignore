@@ -18,6 +18,7 @@
 # generated/reference screenshots
 /screenshots/**/*.png
 !/screenshots/README.md
+/output/playwright
 
 # next.js
 /.next/
