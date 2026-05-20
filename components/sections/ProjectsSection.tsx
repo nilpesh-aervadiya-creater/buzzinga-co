@@ -64,10 +64,10 @@ export default function ProjectsSection({
                   className={cn(
                     "group relative flex flex-col gap-6 overflow-hidden rounded-2xl px-6 pt-6 transition-transform duration-300 focus-visible:outline-offset-4 md:gap-12 md:px-12 md:pt-12",
                     project.client === "JabFab"
-                      ? "h-[372px] pr-0 md:h-[500px] md:pr-0"
+                      ? "h-[372px] pr-0 md:h-[559px] md:pr-0"
                       : project.client === "Predictr"
-                        ? "h-[352px] md:h-[584px]"
-                        : "h-[326px] md:h-[542px]",
+                        ? "h-[352px] md:h-[559px]"
+                        : "h-[326px] md:h-[559px]",
                     project.className
                   )}
                 >

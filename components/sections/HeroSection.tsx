@@ -38,8 +38,8 @@ export default function HeroSection() {
   return (
     <section className="w-full bg-white pt-[164px] pb-0">
       {/* Hero text block */}
-      <div className="text-center px-6">
-        <h1 className="text-[40px] leading-[1.1] font-semibold text-[#262D30] tracking-normal md:text-[56px]">
+      <div className="mx-auto w-full px-6 text-center">
+        <h1 className="text-[28px] leading-[1.1] font-semibold text-[#262D30] tracking-normal min-[810px]:text-[44px] xl:text-[56px]">
           Ship Better Products, Faster,
           <br />
           With AI&#8209;Native Design &amp; Development
@@ -56,7 +56,7 @@ export default function HeroSection() {
       </div>
 
       {/* Image marquee strip */}
-      <div className="mt-20 overflow-hidden w-full">
+      <div className="hero-marquee-mask mt-20 overflow-hidden w-full">
         <div className="hero-marquee-track flex gap-6 w-max">
           {MARQUEE_IMAGES.map((img, i) => (
             <div
@@ -70,7 +70,7 @@ export default function HeroSection() {
                 width={480}
                 height={366}
                 className="object-cover w-full h-full"
-                priority={i < 4}
+                loading="eager"
               />
             </div>
           ))}

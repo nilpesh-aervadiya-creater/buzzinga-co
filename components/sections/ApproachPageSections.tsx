@@ -103,15 +103,15 @@ export default function ApproachPageSections() {
             </p>
           </div>
         </Container>
-        <div className="relative mt-20 h-[320px] w-full overflow-hidden md:mt-28 md:h-[236px]">
-          <div className="absolute left-1/2 top-0 hidden h-[179px] w-[1918px] max-w-none -translate-x-1/2 md:block">
+        <div className="relative mt-20 h-[110px] w-full overflow-hidden md:mt-28 md:h-[236px]">
+          <div className="absolute left-1/2 top-0 h-[13.86vw] max-h-[181px] w-[147vw] max-w-[1920px] -translate-x-1/2 md:h-[14.16vw] md:w-[150vw] lg:h-[181px] lg:w-[1920px]">
             <Image
               src="/buzzinga-assets/images/hero/c3dR5kayp6mfyzXzTWOMBvOKGbU.svg"
               alt=""
               fill
               priority
-              sizes="1918px"
-              className="object-contain"
+              sizes="(max-width: 767px) 147vw, (max-width: 1279px) 150vw, 1920px"
+              className="object-cover"
             />
           </div>
         </div>

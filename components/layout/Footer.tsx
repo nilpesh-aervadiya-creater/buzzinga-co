@@ -19,7 +19,7 @@ export default function Footer() {
           <p className="text-base text-[#262D30]">{SITE.copyright}</p>
         </div>
 
-        <p className="mt-12 text-base font-semibold text-[#262D30]">{SITE.name}</p>
+        <p className="mt-12 text-[20px] font-semibold text-[#262D30]">{SITE.name}</p>
       </Container>
     </footer>
   );

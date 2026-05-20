@@ -87,21 +87,21 @@ function CapabilityCards() {
         <article
           key={capability.title}
           className={cn(
-            "group flex h-[250px] flex-col overflow-hidden rounded-2xl border border-[#D0D5DB] bg-transparent p-4 transition-[height,box-shadow] duration-300 hover:h-[338px] focus-within:h-[338px] focus-within:shadow-[0_18px_42px_rgba(18,24,32,0.08)]",
+            "mobile-capability-card group flex h-[250px] flex-col overflow-hidden rounded-2xl border border-[#D0D5DB] bg-transparent p-4 transition-[height,box-shadow] duration-300 hover:h-[338px] focus-within:h-[338px] focus-within:shadow-[0_18px_42px_rgba(18,24,32,0.08)]",
             CAPABILITY_POSITION_CLASSES[index]
           )}
           tabIndex={0}
         >
           <AssetIcon src={capability.icon} alt="" />
-          <div className="mt-auto transition-all duration-300 group-hover:mt-6 group-focus-within:mt-6">
+          <div className="mobile-capability-text mt-auto transition-all duration-300 group-hover:mt-6 group-focus-within:mt-6">
             <h3 className="text-[21px] font-semibold leading-[1.25] text-[#121820]">
               {capability.title}
             </h3>
-            <p className="mt-2 text-[16px] font-semibold leading-[1.35] text-[#B0B6BC] opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
+            <p className="mobile-capability-service mt-2 text-[16px] font-semibold leading-[1.35] text-[#B0B6BC] opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
               {capability.service}
             </p>
           </div>
-          <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-5 group-hover:max-h-48 group-hover:opacity-100 group-focus-within:mt-5 group-focus-within:max-h-48 group-focus-within:opacity-100">
+          <div className="mobile-capability-content max-h-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-5 group-hover:max-h-48 group-hover:opacity-100 group-focus-within:mt-5 group-focus-within:max-h-48 group-focus-within:opacity-100">
             <p className="text-[16px] leading-[1.45] text-[#121820]">
               {capability.summary}
             </p>
@@ -121,7 +121,7 @@ export function CapabilitiesSection() {
       <Container>
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <h2 className="text-[40px] font-semibold leading-[1.08] text-[#262D30] md:text-[52px]">
+            <h2 className="section-heading text-[40px] font-semibold leading-[1.08] text-[#262D30]">
               From Idea to Intelligence,
               <br />
               Our Capabilities

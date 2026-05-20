@@ -88,7 +88,7 @@ export default function Testimonials({
           </button>
         </div>
 
-        <div className="mt-12 flex justify-center gap-3">
+        <div className="mt-12 flex justify-center gap-0">
           {TESTIMONIALS.map((testimonial, index) => (
             <button
               key={`${testimonial.name}-dot`}
@@ -96,10 +96,21 @@ export default function Testimonials({
               aria-label={`Show testimonial from ${testimonial.name}`}
               onClick={() => setActiveIndex(index)}
               className={cn(
-                "h-3 rounded-full transition-[width,background-color]",
-                index === activeIndex ? "w-8 bg-[#262D30]" : "w-3 bg-[#D9D9D9]"
+                "flex h-[30px] items-center justify-center bg-transparent py-[10px]",
+                index === 0
+                  ? "w-[25px] pl-[10px] pr-[5px]"
+                  : index === TESTIMONIALS.length - 1
+                    ? "w-[25px] pl-[5px] pr-[10px]"
+                    : "w-5 px-[5px]"
               )}
-            />
+            >
+              <span
+                className={cn(
+                  "block h-[10px] w-[10px] rounded-full transition-colors",
+                  index === activeIndex ? "bg-[#262D30]" : "bg-[#D9D9D9]"
+                )}
+              />
+            </button>
           ))}
         </div>
       </Container>
