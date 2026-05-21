@@ -67,6 +67,15 @@ For every UI task:
 - If the live site or an asset is unavailable, record the failure in `docs/ui-measurements.md`, use only already downloaded local assets or existing styles, and do not invent replacements.
 - If Playwright cannot run, record the command/error, inspect with the best available local method, and report that screenshot verification is blocked.
 
+## Token Usage Rules
+
+- Use the minimum context needed to complete the task correctly.
+- Inspect only the files, DOM nodes, styles, screenshots, and assets related to the current target section.
+- Do not paste large command outputs, full files, or repeated screenshot details into the response unless the user asks.
+- Summarize findings clearly while preserving exact measured values in `docs/ui-measurements.md`.
+- Keep `docs/ui-task-prompt.md` focused on the current mismatch, allowed files, measured styles, and required fix.
+- Avoid re-reading or re-testing unchanged sections unless they are required for verification or the user asks.
+
 ## Required Task Report
 
 After every UI task, Codex must report:
