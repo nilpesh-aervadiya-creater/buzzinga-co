@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import Image from "next/image";
 
 const SERVICES = [
@@ -35,6 +36,176 @@ const APPROACH_ITEMS = [
     description: "Built for real-time use in high-pressure environments.",
   },
 ];
+
+function EchoHealthcareDivider() {
+  return (
+    <section className="flex w-full justify-center px-4 pt-16 min-[810px]:px-16">
+      <div className="h-px w-full max-w-[700px] bg-[#262D30]" />
+    </section>
+  );
+}
+
+function EchoHealthcareMediaBox({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`flex w-full justify-center overflow-hidden rounded-2xl bg-[#EBEBEB] px-12 pb-0 pt-12 ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
+
+function EchoHealthcareDiagramMedia() {
+  return (
+    <section className="flex w-full justify-center px-4 pt-16 min-[810px]:px-16">
+      <div className="flex w-full max-w-[1152px] flex-col gap-6 min-[810px]:gap-16">
+        <EchoHealthcareMediaBox>
+          <Image
+            src="/buzzinga-assets/images/project-detail/echohealthcare-discovery-approach.png"
+            alt=""
+            width={2099}
+            height={1804}
+            unoptimized
+            className="block h-auto w-[65.8667vw] max-w-[893px] min-[810px]:w-[69.765625vw]"
+          />
+        </EchoHealthcareMediaBox>
+      </div>
+    </section>
+  );
+}
+
+function EchoHealthcareSliderArrow({
+  direction,
+  disabled,
+  onClick,
+}: {
+  direction: "Previous" | "Next";
+  disabled: boolean;
+  onClick: () => void;
+}) {
+  const image =
+    direction === "Previous"
+      ? "carousel-arrow-prev.svg"
+      : "carousel-arrow-next.svg";
+
+  return (
+    <button
+      type="button"
+      aria-label={direction}
+      disabled={disabled}
+      onClick={onClick}
+      className={`absolute top-1/2 z-10 h-10 w-10 -translate-y-1/2 overflow-hidden rounded-[40px] border-0 bg-[rgba(0,0,0,0.2)] p-0 transition-opacity ${
+        direction === "Previous" ? "left-5" : "right-5"
+      } ${disabled ? "cursor-default opacity-0" : "cursor-pointer opacity-100"}`}
+    >
+      <Image
+        src={`/buzzinga-assets/images/project-detail/${image}`}
+        alt=""
+        width={40}
+        height={40}
+        unoptimized
+        className="block h-10 w-10"
+      />
+    </button>
+  );
+}
+
+function EchoHealthcareImageSlider() {
+  const sliderRef = useRef<HTMLUListElement>(null);
+  const snapTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const wheelLockRef = useRef(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const slideCount = 2;
+
+  const scrollToSlide = (index: number) => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    const nextIndex = Math.max(0, Math.min(slideCount - 1, index));
+    const slideWidth = slider.children[0]?.getBoundingClientRect().width ?? slider.clientWidth;
+    slider.scrollTo({
+      left: nextIndex * (slideWidth + 10),
+      behavior: "smooth",
+    });
+    setActiveIndex(nextIndex);
+  };
+
+  const snapToNearestSlide = (slider: HTMLUListElement) => {
+    if (snapTimeoutRef.current) {
+      clearTimeout(snapTimeoutRef.current);
+    }
+
+    snapTimeoutRef.current = setTimeout(() => {
+      const slideWidth = slider.children[0]?.getBoundingClientRect().width ?? slider.clientWidth;
+      scrollToSlide(Math.round(slider.scrollLeft / (slideWidth + 10)));
+    }, 120);
+  };
+
+  const handleWheel = (event: React.WheelEvent<HTMLUListElement>) => {
+    if (Math.abs(event.deltaX) < 8) return;
+
+    event.preventDefault();
+
+    if (wheelLockRef.current) return;
+    wheelLockRef.current = true;
+    scrollToSlide(activeIndex + (event.deltaX > 0 ? 1 : -1));
+
+    window.setTimeout(() => {
+      wheelLockRef.current = false;
+    }, 520);
+  };
+
+  return (
+    <section className="flex w-full justify-center overflow-hidden px-4 pt-24 min-[810px]:px-8 min-[810px]:pt-16 min-[1200px]:px-16">
+      <div className="relative flex aspect-[1200/700] w-full max-w-[1152px] overflow-hidden rounded-[32px]">
+        <ul
+          ref={sliderRef}
+          className="project-scrollbar m-0 flex h-full w-full snap-x snap-mandatory list-none gap-[10px] overflow-x-auto overflow-y-hidden scroll-smooth p-0"
+          onScroll={(event) => {
+            const slideWidth =
+              event.currentTarget.children[0]?.getBoundingClientRect().width ??
+              event.currentTarget.clientWidth;
+            setActiveIndex(Math.round(event.currentTarget.scrollLeft / (slideWidth + 10)));
+            snapToNearestSlide(event.currentTarget);
+          }}
+          onWheel={handleWheel}
+        >
+          {[
+            "echohealthcare-approach-carousel-1.png",
+            "echohealthcare-approach-carousel-2.png",
+          ].map((image) => (
+            <li key={image} className="h-full w-full shrink-0 snap-start">
+              <Image
+                src={`/buzzinga-assets/images/project-detail/${image}`}
+                alt=""
+                width={1200}
+                height={700}
+                unoptimized
+                className="block h-full w-full object-cover"
+              />
+            </li>
+          ))}
+        </ul>
+        <EchoHealthcareSliderArrow
+          direction="Previous"
+          disabled={activeIndex === 0}
+          onClick={() => scrollToSlide(activeIndex - 1)}
+        />
+        <EchoHealthcareSliderArrow
+          direction="Next"
+          disabled={activeIndex === slideCount - 1}
+          onClick={() => scrollToSlide(activeIndex + 1)}
+        />
+      </div>
+    </section>
+  );
+}
 
 function BriefInfoCard({
   title,
@@ -175,6 +346,10 @@ export function EchoHealthcareBriefSection() {
   );
 }
 
+export function EchoHealthcareChallengeDivider() {
+  return <EchoHealthcareDivider />;
+}
+
 export function EchoHealthcareChallengeSection() {
   return (
     <section className="flex w-full justify-center px-4 pb-0 pt-16 min-[810px]:px-16">
@@ -198,6 +373,10 @@ export function EchoHealthcareChallengeSection() {
       </div>
     </section>
   );
+}
+
+export function EchoHealthcareDiscoveryApproachMediaSection() {
+  return <EchoHealthcareDiagramMedia />;
 }
 
 export function EchoHealthcareDiscoverySection() {
@@ -236,7 +415,7 @@ export function EchoHealthcareDiscoverySection() {
 
 export function EchoHealthcareApproachSection() {
   return (
-    <section className="flex w-full justify-center px-4 pb-0 pt-16 min-[810px]:px-16">
+    <section className="flex w-full justify-center px-4 pb-0 pt-20 min-[810px]:px-16 min-[810px]:pt-16">
       <div className="flex w-full max-w-[700px] flex-col items-start gap-4 min-[810px]:flex-row min-[810px]:gap-6">
         <div className="flex w-auto flex-col justify-center min-[810px]:w-[210px]">
           <p className="m-0 text-[18px] font-semibold leading-[25.2px] text-[#262D30] min-[810px]:text-[24px] min-[810px]:leading-[33.6px]">
@@ -270,4 +449,8 @@ export function EchoHealthcareApproachSection() {
       </div>
     </section>
   );
+}
+
+export function EchoHealthcareApproachMediaSection() {
+  return <EchoHealthcareImageSlider />;
 }
