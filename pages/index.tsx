@@ -4,7 +4,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import Testimonials from "@/components/sections/Testimonials";
 import {
   CapabilitiesSection,
-  ContactSection,
+  ContactPageSection,
   IntroSection,
   ProjectsSection,
   WhyClientsStaySection,
@@ -21,7 +21,7 @@ export default function Home() {
         <ProjectsSection />
         <Testimonials description="Don't just take our word for it. Here's what our clients say about working with us." />
         <WhyClientsStaySection />
-        <ContactSection />
+        <ContactPageSection className="!pt-20" />
       </main>
       <Footer />
     </>

@@ -71,7 +71,7 @@ export function ContactPageSection({ className }: ContactPageSectionProps) {
   return (
     <section className={cn("bg-white pt-[162px] pb-[100px]", className)}>
       <Container>
-        <div className="relative flex h-auto flex-col items-start justify-start gap-10 rounded-[24px] bg-[#F2F4F7] p-8 xl:h-[610.422px] xl:flex-row xl:gap-8 xl:p-[72px]">
+        <div className="relative flex h-auto flex-col items-start justify-start gap-10 rounded-[24px] bg-[#F2F4F7] p-8 xl:flex-row xl:gap-8 xl:p-[64px]">
           <div className="flex w-full flex-none flex-col items-start gap-4 xl:w-[calc((100%-32px)/2)]">
             <h2 className="m-0 w-full text-[40px] font-semibold leading-[46px] text-[#262D30] xl:max-w-[425px] xl:text-[48px] xl:leading-[57.6px]">
               Start Your Next
@@ -85,12 +85,12 @@ export function ContactPageSection({ className }: ContactPageSectionProps) {
             </p>
           </div>
 
-          <form className="relative flex w-full flex-none flex-col items-start gap-5 [font-family:Inter] xl:w-[calc((100%-32px)/2)]">
-            <label className="relative flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[14.4px] text-[#242424b3] [font-family:Inter]">
+          <form className="relative flex w-full flex-none flex-col items-start gap-5 [font-family:'Inter_Display','Inter',sans-serif] xl:w-[calc((100%-32px)/2)]">
+            <label className="relative flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[14.4px] text-[#242424b3] [font-family:'Inter_Display','Inter',sans-serif]">
               What are you interested in?*
               <select
                 defaultValue=""
-                className="h-[43.203px] w-full rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:Inter]"
+                className="h-[43.203px] w-full rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]"
               >
                 <option value="" disabled>
                   Select...
@@ -102,11 +102,11 @@ export function ContactPageSection({ className }: ContactPageSectionProps) {
               </select>
             </label>
 
-            <label className="relative flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[14.4px] text-[#242424b3] [font-family:Inter]">
+            <label className="relative flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[14.4px] text-[#242424b3] [font-family:'Inter_Display','Inter',sans-serif]">
               What stage are you in your AI journey?*
               <select
                 defaultValue=""
-                className="h-[43.203px] w-full rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:Inter]"
+                className="h-[43.203px] w-full rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]"
               >
                 <option value="" disabled>
                   Select...
@@ -119,28 +119,28 @@ export function ContactPageSection({ className }: ContactPageSectionProps) {
             </label>
 
             <div className="flex w-full flex-col gap-5 md:flex-row">
-              <label className="flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[14.4px] text-[#242424b3] [font-family:Inter]">
+              <label className="flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[14.4px] text-[#242424b3] [font-family:'Inter_Display','Inter',sans-serif]">
                 Name*
-                <input className="h-[43.203px] rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:Inter]" />
+                <input className="h-[43.203px] rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]" />
               </label>
-              <label className="flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[14.4px] text-[#242424b3] [font-family:Inter]">
+              <label className="flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[14.4px] text-[#242424b3] [font-family:'Inter_Display','Inter',sans-serif]">
                 Email*
                 <input
                   type="email"
-                  className="h-[43.203px] rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:Inter]"
+                  className="h-[43.203px] rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]"
                 />
               </label>
             </div>
 
-            <label className="flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[16.8px] text-[#242424b3] [font-family:Inter]">
+            <label className="flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[16.8px] text-[#242424b3] [font-family:'Inter_Display','Inter',sans-serif]">
               Briefly describe your project&mdash;goals, challenges, and requirements,
               to help us assist you more effectively during our initial call.*
-              <textarea className="h-[100px] resize-y rounded-[10px] border border-[#b8bcc2] bg-white px-3 py-3 text-[16px] font-normal leading-[20.8px] text-[#262D30] [font-family:Inter]" />
+              <textarea className="h-[100px] resize-y rounded-[10px] border border-[#b8bcc2] bg-white px-3 py-3 text-[16px] font-normal leading-[20.8px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]" />
             </label>
 
             <button
               type="submit"
-              className="relative flex h-10 w-full items-center justify-center rounded-[10px] bg-[#333333] p-0 text-[14px] font-semibold leading-[16.8px] text-white transition-colors hover:bg-[rgba(51,51,51,0.85)] [font-family:Inter]"
+              className="relative flex h-10 w-full items-center justify-center rounded-[10px] bg-[#333333] p-0 text-[14px] font-semibold leading-[16.8px] text-white transition-colors hover:bg-[rgba(51,51,51,0.85)] [font-family:'Inter_Display','Inter',sans-serif]"
             >
               Submit
             </button>

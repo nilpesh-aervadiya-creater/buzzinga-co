@@ -1,6 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { ContactSection } from "@/components/sections/HomeSections";
+import { ContactPageSection } from "@/components/sections/HomeSections";
 import ApproachPageSections from "@/components/sections/ApproachPageSections";
 
 export default function ApproachPage() {
@@ -9,7 +9,7 @@ export default function ApproachPage() {
       <Header />
       <main>
         <ApproachPageSections />
-        <ContactSection />
+        <ContactPageSection className="!pt-20" />
       </main>
       <Footer />
     </>
