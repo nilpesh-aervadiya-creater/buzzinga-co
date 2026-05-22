@@ -190,23 +190,24 @@ a {
 }
 
 .hero-motion-slider {
-  height: clamp(500px, 42vw, 480px);
+  height: clamp(320px, 34vw, 500px);
+  padding-top: clamp(48px, 6vw, 88px);
 }
 
-.hero-motion-stage {
-  position: relative;
-  height: 100%;
-  min-width: 100%;
+.hero-motion-track {
+  gap: clamp(16px, 1.7vw, 24px);
+  animation: hero-simple-slider 30s linear infinite;
+  will-change: transform;
+}
+
+.hero-motion-slider:hover .hero-motion-track {
+  animation-play-state: paused;
 }
 
 .hero-motion-card {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: clamp(292px, 33.333vw, 480px);
   aspect-ratio: 480 / 366;
   border-radius: 24px;
-  will-change: transform, opacity;
 }
 
 .hero-motion-card img {
@@ -214,6 +215,11 @@ a {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+@keyframes hero-simple-slider {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - clamp(8px, 0.85vw, 12px))); }
 }
 
 .logo-slider-track {
