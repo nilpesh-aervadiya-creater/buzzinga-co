@@ -12,14 +12,14 @@ export function ContactPageSection({ className }: ContactPageSectionProps) {
   return (
     <section className={cn("contact-section bg-white pt-[162px] pb-[100px]", className)}>
       <Container>
-        <div className="relative flex h-auto flex-col items-start justify-start gap-10 rounded-[24px] bg-[#F2F4F7] p-8 xl:flex-row xl:gap-8 xl:p-[64px]">
+        <div style={{ fontFeatureSettings: "'zero' 1, 'cv11' 1, 'ss01' 1" }} className="relative flex h-auto flex-col items-start justify-start gap-10 rounded-[24px] bg-[#F2F4F7] p-8 xl:flex-row xl:gap-8 xl:p-[72px]">
           <div className="contact-left will-animate -translate-x-8 flex w-full flex-none flex-col items-start gap-4 xl:w-[calc((100%-32px)/2)]">
             <h2 className="m-0 w-full text-[24px] font-semibold leading-[28.8px] text-[#262D30] min-[810px]:text-[40px] min-[810px]:leading-[46px] xl:max-w-[425px] xl:text-[48px] xl:leading-[57.6px]">
               Start Your Next
               <br />
               Journey With Us
             </h2>
-            <p className="m-0 w-full text-[18px] font-normal leading-[28px] text-[#262D30] xl:max-w-[425px] xl:text-[20px] xl:leading-[32px]">
+            <p className="m-0 w-full lg:max-w-[485px] text-[18px] font-normal leading-[28px] text-[#262D30] xl:text-[20px] xl:leading-[32px]">
               Need a quick quote, a free 30-min consultation, or just want to
               learn more? Drop your details, and we&apos;ll be in touch within
               24 working hours to set up a call.

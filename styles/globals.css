@@ -170,7 +170,7 @@ body {
   background: #ffffff;
   color: #262d30;
   font-family: "Inter Display", "Inter", sans-serif;
-  font-feature-settings: "zero" 1, "cv11" 1, "ss01" 1;
+  font-feature-settings: "cv11" 1;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

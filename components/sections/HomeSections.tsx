@@ -117,32 +117,33 @@ function CapabilityCards() {
   ];
 
   return (
-    <div className="capabilities-grid mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <div className="capabilities-grid mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-[repeat(4,288px)] xl:justify-center">
       {orderedCapabilities.map((capability, index) => (
         <article
           key={capability.title}
           className={cn(
             "capability-tile will-animate mobile-capability-card group flex h-[250px] flex-col overflow-hidden rounded-2xl border border-[#D0D5DB] bg-transparent p-4 transition-[height,box-shadow] duration-300 hover:h-[338px] focus-within:h-[338px] focus-within:shadow-[0_18px_42px_rgba(18,24,32,0.08)]",
+            "relative items-start justify-between border-0 after:absolute after:inset-0 after:rounded-2xl after:border after:border-[rgba(36,36,36,0.2)] after:content-['']",
             CAPABILITY_POSITION_CLASSES[index]
           )}
           tabIndex={0}
         >
           <AssetIcon src={capability.icon} alt="" />
-          <div className="mobile-capability-text mt-auto transition-all duration-300 group-hover:mt-6 group-focus-within:mt-6">
-            <h3 className="text-[21px] font-semibold leading-[1.25] text-[#121820]">
+          <div className="mobile-capability-text transition-all duration-300 group-hover:mt-6 group-focus-within:mt-6">
+            <h3 className="text-[20px] font-semibold leading-[30px] text-[#262D30]">
               {capability.title}
             </h3>
-            <p className="mobile-capability-service mt-2 text-[16px] font-semibold leading-[1.35] text-[#B0B6BC] opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
+            <p className="mobile-capability-service mt-0 max-h-0 overflow-hidden text-[16px] font-semibold leading-[1.35] text-[#B0B6BC] opacity-0 transition-all duration-200 group-hover:mt-2 group-hover:max-h-12 group-hover:opacity-100 group-focus-within:mt-2 group-focus-within:max-h-12 group-focus-within:opacity-100">
               {capability.service}
             </p>
-          </div>
-          <div className="mobile-capability-content max-h-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-5 group-hover:max-h-48 group-hover:opacity-100 group-focus-within:mt-5 group-focus-within:max-h-48 group-focus-within:opacity-100">
-            <p className="text-[16px] leading-[1.45] text-[#121820]">
-              {capability.summary}
-            </p>
-            <p className="mt-5 text-[16px] leading-[1.45] text-[#121820]">
-              {capability.description}
-            </p>
+            <div className="mobile-capability-content max-h-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:mt-5 group-hover:max-h-48 group-hover:opacity-100 group-focus-within:mt-5 group-focus-within:max-h-48 group-focus-within:opacity-100">
+              <p className="text-[16px] leading-[1.45] text-[#121820]">
+                {capability.summary}
+              </p>
+              <p className="mt-5 text-[16px] leading-[1.45] text-[#121820]">
+                {capability.description}
+              </p>
+            </div>
           </div>
         </article>
       ))}
@@ -179,9 +180,9 @@ export function CapabilitiesSection() {
 
 export function WhyClientsStaySection() {
   return (
-    <section className="values-section bg-white py-24 md:py-32">
+    <section className="values-section bg-white py-20">
       <Container>
-        <div className="grid gap-14 md:grid-cols-[0.8fr_1.2fr]">
+        <div className="grid gap-14 md:grid-cols-[432px_668px] md:gap-[100px]">
           <div className="values-left will-animate -translate-x-10">
             <h2 className="text-[24px] font-semibold leading-[1.2] text-[#262D30] min-[810px]:text-[40px] min-[810px]:leading-[1.15] xl:text-[52px]">
               Why Clients Stay
@@ -202,16 +203,16 @@ export function WhyClientsStaySection() {
             </Link>
           </div>
 
-          <div className="values-grid grid gap-x-20 gap-y-12 md:grid-cols-2">
+          <div className="values-grid grid gap-x-[100px] gap-y-6 md:grid-cols-[286px_284px]">
           {WHY_CLIENTS_STAY.map((item) => (
               <article key={item.title} className="value-tile will-animate">
                 <span className="value-icon inline-block">
                   <InlineSvgIcon src={item.icon} alt="" size={80} />
                 </span>
-                <h3 className="mt-6 text-[22px] font-semibold text-[#121820]">
+                <h3 className="mt-4 text-[20px] font-semibold leading-[30px] text-[#121820]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-[18px] leading-[1.55] text-[#121820]">
+                <p className="mt-[10px] text-[18px] leading-[1.55] text-[#121820]">
                   {item.description}
                 </p>
               </article>

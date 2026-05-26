@@ -58,7 +58,7 @@ export default function Testimonials({
                   key={`${testimonial.name}-${testimonial.company}`}
                   className="w-full flex-none"
                 >
-                  <blockquote className="testimonial-quote m-0 mx-auto text-[20px] font-light leading-[26px] text-[#262D30] lg:text-[28px] lg:leading-[36.4px] xl:text-[36px] xl:leading-[54px]">
+                  <blockquote className="testimonial-quote m-0 mx-auto text-[20px] font-light italic leading-[26px] text-[#262D30] lg:text-[28px] lg:leading-[36.4px] xl:text-[36px] xl:leading-[54px]">
                     &quot;{testimonial.quote}&quot;
                   </blockquote>
                   <p className="mt-10 mb-0 text-2xl font-semibold leading-8 text-[#121820]">
