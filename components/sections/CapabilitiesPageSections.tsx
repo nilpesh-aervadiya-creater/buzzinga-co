@@ -228,8 +228,8 @@ type DeliverableIconName = (typeof DELIVERABLES)[number]["icon"];
 function DeliverableIcon({ name }: { name: DeliverableIconName }) {
   const common = {
     fill: "transparent",
-    stroke: "currentColor",
-    strokeWidth: 2,
+    stroke: "rgb(0,0,0)",
+    strokeWidth: 1,
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
   };
@@ -237,46 +237,63 @@ function DeliverableIcon({ name }: { name: DeliverableIconName }) {
   return (
     <svg
       viewBox="0 0 24 24"
-      className="h-10 w-10 text-[#262D30]"
+      className="h-10 w-10"
       aria-hidden="true"
+      role="presentation"
     >
       {name === "webApp" && (
         <>
-          <path {...common} d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
-          <path {...common} d="M6 8h.01M10 8h.01M14 8h.01" />
+          <path {...common} d="M 2 16 C 0.895 16 0 15.105 0 14 L 0 2 C 0 0.895 0.895 0 2 0 L 18 0 C 19.105 0 20 0.895 20 2 L 20 14 C 20 15.105 19.105 16 18 16 Z" transform="translate(2 4)" />
+          <path {...common} d="M 0 0 L 0.01 0" transform="translate(6 8)" />
+          <path {...common} d="M 0 0 L 0.01 0" transform="translate(10 8)" />
+          <path {...common} d="M 0 0 L 0.01 0" transform="translate(14 8)" />
         </>
       )}
       {name === "integration" && (
         <>
-          <path {...common} d="M4.2 15.1a7 7 0 1 1 13.5-3.1h1.8a4.5 4.5 0 0 1 2.5 8.2" />
-          <path {...common} d="M12 16.3a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" />
-          <path {...common} d="M12 14.3v1M15.5 19.3h1M7.5 19.3h1M14.5 16.8l.7-.7M8.8 22.5l.7-.7M9.5 16.8l-.7-.7M15.2 22.5l-.7-.7" />
+          <path {...common} d="M 0.383 0 L 0 0.924" transform="translate(10.469 19.772)" />
+          <path {...common} d="M 0 0.923 L 0.383 0" transform="translate(13.148 13.305)" />
+          <path {...common} d="M 2.679 6.467 C 4.21 5.833 4.937 4.078 4.303 2.547 C 3.669 1.016 1.914 0.289 0.383 0.923 L 0 0" transform="translate(10.469 13.305)" />
+          <path {...common} d="M 4.531 6.468 L 4.149 5.544 C 2.618 6.178 0.863 5.451 0.229 3.92 C -0.405 2.389 0.322 0.634 1.853 0" transform="translate(8.999 14.228)" />
+          <path {...common} d="M 0 0.383 L 0.923 0" transform="translate(14.772 15.469)" />
+          <path {...common} d="M 0 0 L 0.923 0.383" transform="translate(14.772 18.148)" />
+          <path {...common} d="M 2.198 12.094 C 0.339 10.34 -0.418 7.712 0.225 5.239 C 0.869 2.765 2.809 0.838 5.288 0.213 C 7.766 -0.412 10.389 0.363 12.128 2.236 C 12.86 3.022 13.4 3.965 13.708 4.994 L 15.498 4.994 C 17.456 5.02 19.171 6.309 19.742 8.181 C 20.313 10.053 19.608 12.08 17.998 13.194" transform="translate(2.002 3.006)" />
+          <path {...common} d="M 0.923 0.383 L 0 0" transform="translate(8.305 15.469)" />
+          <path {...common} d="M 0.923 0 L 0 0.383" transform="translate(8.305 18.148)" />
         </>
       )}
       {name === "mobileApp" && (
         <>
-          <path {...common} d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" />
-          <path {...common} d="M12 18h.01" />
+          <path {...common} d="M 2 20 C 0.895 20 0 19.105 0 18 L 0 2 C 0 0.895 0.895 0 2 0 L 12 0 C 13.105 0 14 0.895 14 2 L 14 18 C 14 19.105 13.105 20 12 20 Z" transform="translate(5 2)" />
+          <path {...common} d="M 0 0 L 0.01 0" transform="translate(12 18)" />
         </>
       )}
       {name === "cms" && (
         <>
-          <path {...common} d="M10.3 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4a2 2 0 0 1 1.7.9l.6 1.2A2 2 0 0 0 12 6h8a2 2 0 0 1 2 2v3.3" />
-          <path {...common} d="M18 15a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z" />
-          <path {...common} d="M18 13.3v1M18 21.8v1M13.3 18h1M21.8 18h1M14.7 14.7l.7.7M20.6 20.6l.7.7M21.3 14.7l-.7.7M15.4 20.6l-.7.7" />
+          <path {...common} d="M 8.3 17 L 2 17 C 0.895 17 0 16.105 0 15 L 0 2 C 0 0.896 0.895 0 2 0 L 5.98 0 C 6.66 -0.007 7.296 0.332 7.67 0.9 L 8.33 2.1 C 8.7 2.662 9.327 3 10 3 L 18 3 C 19.105 3 20 3.896 20 5 L 20 8.3" transform="translate(2 3)" />
+          <path {...common} d="M 0 0.382 L 0.923 0" transform="translate(14.305 19.148)" />
+          <path {...common} d="M 0.923 0.383 L 0 0" transform="translate(14.305 16.469)" />
+          <path {...common} d="M 0.383 0.923 L 0 0" transform="translate(16.469 14.305)" />
+          <path {...common} d="M 0.383 0 L 0 0.924" transform="translate(16.469 20.772)" />
+          <path {...common} d="M 0 0.923 L 0.383 0" transform="translate(19.148 14.305)" />
+          <path {...common} d="M 0.382 0.924 L 0 0" transform="translate(19.148 20.772)" />
+          <path {...common} d="M 0 0.383 L 0.924 0" transform="translate(20.772 16.469)" />
+          <path {...common} d="M 0 0 L 0.924 0.383" transform="translate(20.772 19.148)" />
+          <path {...common} d="M 0 3 C 0 1.343 1.343 0 3 0 C 4.657 0 6 1.343 6 3 C 6 4.657 4.657 6 3 6 C 1.343 6 0 4.657 0 3 Z" transform="translate(15 15)" />
         </>
       )}
       {name === "website" && (
         <>
-          <path {...common} d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Z" />
-          <path {...common} d="M12 2c-5.3 5.6-5.3 14.4 0 20 5.3-5.6 5.3-14.4 0-20Z" />
-          <path {...common} d="M2 12h20" />
+          <path {...common} d="M 0 10 C 0 4.477 4.477 0 10 0 C 15.523 0 20 4.477 20 10 C 20 15.523 15.523 20 10 20 C 4.477 20 0 15.523 0 10 Z" transform="translate(2 2)" />
+          <path {...common} d="M 4 0 C -1.333 5.6 -1.333 14.4 4 20 C 9.333 14.4 9.333 5.6 4 0" transform="translate(8 2)" />
+          <path {...common} d="M 0 0 L 20 0" transform="translate(2 12)" />
         </>
       )}
       {name === "commerce" && (
         <>
-          <path {...common} d="M7 20a1 1 0 1 0 2 0 1 1 0 0 0-2 0ZM18 20a1 1 0 1 0 2 0 1 1 0 0 0-2 0Z" />
-          <path {...common} d="M2 2h2l2.7 12.4A2 2 0 0 0 8.7 16h9.8a2 2 0 0 0 2-1.6L22 7H5.1" />
+          <path {...common} d="M 0 1 C 0 0.448 0.448 0 1 0 C 1.552 0 2 0.448 2 1 C 2 1.552 1.552 2 1 2 C 0.448 2 0 1.552 0 1 Z" transform="translate(7 20)" />
+          <path {...common} d="M 0 1 C 0 0.448 0.448 0 1 0 C 1.552 0 2 0.448 2 1 C 2 1.552 1.552 2 1 2 C 0.448 2 0 1.552 0 1 Z" transform="translate(18 20)" />
+          <path {...common} d="M 0 0 L 2 0 L 4.66 12.42 C 4.861 13.358 5.701 14.021 6.66 14 L 16.44 14 C 17.378 13.998 18.188 13.346 18.39 12.43 L 20.04 5 L 3.07 5" transform="translate(2.05 2.05)" />
         </>
       )}
     </svg>

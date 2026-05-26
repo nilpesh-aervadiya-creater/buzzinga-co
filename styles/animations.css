@@ -30,7 +30,7 @@
 }
 
 .site-header.scrolled {
-  box-shadow: 0 10px 30px rgba(18, 24, 32, 0.08);
+  /* box-shadow: 0 10px 30px rgba(18, 24, 32, 0.08); */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }

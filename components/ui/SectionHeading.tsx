@@ -21,11 +21,11 @@ export default function SectionHeading({
         className
       )}
     >
-      <h2 className="section-heading text-[24px] font-semibold leading-[28.8px] text-[#262D30] min-[810px]:text-[40px] min-[810px]:leading-tight xl:text-[48px]">
+      <h2 className="section-heading">
         {heading}
       </h2>
       {subheading && (
-        <p className="heading-description max-w-2xl text-xl text-[#262D30]">{subheading}</p>
+        <p className="heading-description max-w-2xl">{subheading}</p>
       )}
     </div>
   );

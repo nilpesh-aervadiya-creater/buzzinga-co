@@ -154,6 +154,11 @@
   --color-brand-red: #AF0000;
   --color-brand-charcoal: #232227;
   --color-brand-muted: rgba(36, 36, 36, 0.7);
+
+  --section-heading-font-size: 24px;
+  --section-heading-line-height: 28.8px;
+  --section-text-font-size: 16px;
+  --section-text-line-height: 24px;
 }
 
 * {
@@ -165,6 +170,7 @@ body {
   background: #ffffff;
   color: #262d30;
   font-family: "Inter Display", "Inter", sans-serif;
+  font-feature-settings: "zero" 1, "cv11" 1, "ss01" 1;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -253,11 +259,23 @@ a {
 }
 
 .section-heading {
-  font-size: 48px;
+  margin: 0;
+  color: var(--color-brand-dark);
+  font-family: var(--font-display);
+  font-size: var(--section-heading-font-size);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: var(--section-heading-line-height);
 }
 
 .heading-description {
-  font-size: 20px;
+  margin: 0;
+  color: var(--color-brand-dark);
+  font-family: var(--font-display);
+  font-size: var(--section-text-font-size);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: var(--section-text-line-height);
 }
 
 label {
@@ -312,5 +330,21 @@ select {
 
   .mobile-capability-card .mobile-capability-text {
     margin-top: 24px;
+  }
+}
+
+@media (min-width: 810px) {
+  :root {
+    --section-heading-font-size: 40px;
+    --section-heading-line-height: 48px;
+    --section-text-font-size: 20px;
+    --section-text-line-height: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --section-heading-font-size: 48px;
+    --section-heading-line-height: 57.6px;
   }
 }
