@@ -31,7 +31,7 @@ export default function ProjectsSection({
   return (
     <section
       className={cn(
-        "bg-white",
+        "portfolio-section bg-white",
         pageHeading ? "pt-[162px] pb-10" : "py-20 md:py-24",
         className
       )}
@@ -40,7 +40,7 @@ export default function ProjectsSection({
       <Container>
         <HeadingTag
           className={cn(
-            "m-0 font-semibold text-[#262D30]",
+            "portfolio-heading will-animate m-0 font-semibold text-[#262D30]",
             pageHeading
               ? "text-[40px] leading-[1.1] md:text-[56px] md:leading-[61.6px]"
               : "text-[40px] leading-[1.1] md:text-[52px]"
@@ -49,12 +49,12 @@ export default function ProjectsSection({
           {title}
         </HeadingTag>
         {description ? (
-          <p className="mt-5 max-w-[720px] text-[20px] leading-[1.5] text-[#262D30]">
+          <p className="portfolio-description will-animate mt-5 max-w-[720px] text-[20px] leading-[1.5] text-[#262D30]">
             {description}
           </p>
         ) : null}
 
-        <div className={cn("grid gap-2 lg:grid-cols-2", description ? "mt-14" : "mt-20")}>
+        <div className={cn("portfolio-grid grid gap-2 lg:grid-cols-2", description ? "mt-14" : "mt-20")}>
           {projectColumns.map((column, columnIndex) => (
             <div key={columnIndex} className="grid gap-2">
               {column.map((project, index) => (
@@ -62,7 +62,7 @@ export default function ProjectsSection({
                   key={project.client}
                   href={project.href}
                   className={cn(
-                    "group relative flex flex-col gap-6 overflow-hidden rounded-2xl px-6 pt-6 transition-transform duration-300 focus-visible:outline-offset-4 md:gap-12 md:px-12 md:pt-12",
+                    "portfolio-card will-animate group relative flex flex-col gap-6 overflow-hidden rounded-2xl px-6 pt-6 transition-transform duration-300 focus-visible:outline-offset-4 md:gap-12 md:px-12 md:pt-12",
                     project.client === "JabFab"
                       ? "h-[372px] pr-0 md:h-[559px] md:pr-0"
                       : project.client === "Predictr"
@@ -71,6 +71,7 @@ export default function ProjectsSection({
                     project.className
                   )}
                 >
+                  <span className="portfolio-card-overlay" aria-hidden="true" />
                   <div className="relative z-10 max-w-[500px]">
                     <p
                       className={cn(

@@ -6,7 +6,7 @@ export default function ContactBuzzinga() {
   return (
     <>
       <Header />
-      <main>
+      <main className="page-animated">
         <ContactPageSection />
       </main>
       <Footer />

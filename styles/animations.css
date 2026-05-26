@@ -1,0 +1,223 @@
+.will-animate {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.will-animate.is-animated,
+.prefers-reduced-motion .will-animate {
+  opacity: 1;
+  transform: none;
+}
+
+.values-left.will-animate {
+  transform: translateX(-40px);
+}
+
+.contact-left.will-animate {
+  transform: translateX(-32px);
+}
+
+.contact-form.will-animate {
+  transform: translateX(32px);
+}
+
+.portfolio-card.will-animate {
+  transform: scale(0.94);
+}
+
+.site-header {
+  transform: translateY(-100%);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 10px 30px rgba(18, 24, 32, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.header-cta,
+.contact-submit {
+  transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.header-cta:hover,
+.contact-submit:hover {
+  transform: scale(1.04);
+}
+
+.hero-line,
+.hero-subtext {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover,
+.hero-motion-slider:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.logo-reveal-item {
+  opacity: 0;
+}
+
+.capabilities-link .capabilities-arrow {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.capabilities-link:hover .capabilities-arrow {
+  transform: translateX(4px);
+}
+
+.capability-tile img {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.portfolio-card {
+  position: relative;
+}
+
+.portfolio-card::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background: rgba(255, 255, 255, 0.95);
+  content: "";
+  transition: width 0.3s ease;
+  z-index: 20;
+}
+
+.portfolio-card:hover::after,
+.portfolio-card:focus-visible::after {
+  width: 100%;
+}
+
+.portfolio-card img {
+  transition: transform 0.45s ease;
+}
+
+.portfolio-card:hover img,
+.portfolio-card:focus-visible img {
+  transform: scale(1.08);
+}
+
+.portfolio-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+  z-index: 5;
+}
+
+.portfolio-card:hover .portfolio-card-overlay,
+.portfolio-card:focus-visible .portfolio-card-overlay {
+  opacity: 0.55;
+}
+
+.testimonial-panel {
+  transition: opacity 0.6s ease;
+}
+
+.testimonial-dot {
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.testimonial-arrow {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+}
+
+.testimonial-arrow-prev:hover {
+  transform: translateY(-50%) translateX(-2px) scale(1.1);
+}
+
+.testimonial-arrow-next:hover {
+  transform: translateY(-50%) translateX(2px) scale(1.1);
+}
+
+.value-icon path,
+.value-icon circle,
+.value-icon line,
+.value-icon polyline,
+.value-icon rect {
+  stroke-dasharray: var(--path-length, 1);
+  stroke-dashoffset: var(--path-length, 1);
+}
+
+.value-inline-svg svg {
+  height: 100%;
+  width: 100%;
+}
+
+.contact-field {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-field:focus {
+  border-color: #262d30;
+  box-shadow: 0 0 0 3px rgba(38, 45, 48, 0.15);
+}
+
+.contact-submit:hover {
+  background-color: rgba(51, 51, 51, 0.85);
+}
+
+.submit-spinner {
+  height: 18px;
+  width: 18px;
+  animation: submit-spin 0.8s linear infinite;
+}
+
+.submit-check {
+  display: inline-block;
+  animation: submit-check 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes submit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes submit-check {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .will-animate,
+  .hero-line,
+  .hero-subtext,
+  .logo-reveal-item {
+    opacity: 1;
+    transform: none;
+  }
+
+  .site-header {
+    transform: none;
+  }
+}

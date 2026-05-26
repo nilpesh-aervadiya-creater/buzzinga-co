@@ -7,7 +7,7 @@ export default function ApproachPage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="page-animated">
         <ApproachPageSections />
         <ContactPageSection className="!pt-20" />
       </main>

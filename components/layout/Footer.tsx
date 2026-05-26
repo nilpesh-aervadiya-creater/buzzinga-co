@@ -3,7 +3,7 @@ import { SITE } from "@/constants/site-content";
 
 export default function Footer() {
   return (
-    <footer className="bg-white py-16">
+    <footer className="site-footer bg-white py-16 opacity-0">
       <Container>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <p className="text-base text-[#262D30]">{SITE.tagline}</p>

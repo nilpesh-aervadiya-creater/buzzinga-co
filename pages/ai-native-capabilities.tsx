@@ -7,7 +7,7 @@ export default function CapabilitiesPage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="page-animated">
         <CapabilitiesPageSections />
         <ContactPageSection className="!pt-20" />
       </main>

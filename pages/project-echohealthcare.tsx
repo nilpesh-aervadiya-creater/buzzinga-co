@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { ContactPageSection } from "@/components/sections/ContactSection";
 import {
@@ -18,7 +19,7 @@ export default function ProjectEchoHealthcare() {
   return (
     <>
       <Header />
-      <main>
+      <main className="page-animated">
         <EchoHealthcareHeroSection />
         <EchoHealthcareBriefSection />
         <EchoHealthcareChallengeDivider />
@@ -32,6 +33,7 @@ export default function ProjectEchoHealthcare() {
         <EchoHealthcareOutcomeSection />
         <ContactPageSection className="!pt-16" />
       </main>
+      <Footer />
     </>
   );
 }

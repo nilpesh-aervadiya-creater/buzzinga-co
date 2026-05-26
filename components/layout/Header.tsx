@@ -49,7 +49,7 @@ export default function Header() {
 
         <Link
           href="/contact-buzzinga"
-          className="hidden h-full items-center whitespace-nowrap text-[16px] font-[700] leading-[1.5] tracking-[-0.02em] text-[#262D30] !underline !decoration-[2.5px] underline-offset-[3px] min-[810px]:flex"
+          className="header-cta hidden h-full items-center whitespace-nowrap text-[16px] font-[700] leading-[1.5] tracking-[-0.02em] text-[#262D30] !underline !decoration-[2.5px] underline-offset-[3px] min-[810px]:flex"
         >
           Contact Us
         </Link>

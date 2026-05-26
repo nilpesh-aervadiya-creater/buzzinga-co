@@ -3,10 +3,10 @@ import { cn } from "@/lib/utils";
 
 export function ContactSection() {
   return (
-    <section className="bg-white py-12 md:py-20">
+    <section className="contact-section bg-white py-12 md:py-20">
       <Container>
         <div className="grid gap-12 rounded-3xl bg-[#F2F4F7] p-8 md:grid-cols-[0.6fr_0.6fr] md:p-[72px]">
-          <div>
+          <div className="contact-left will-animate -translate-x-8">
             <h2 className="text-[40px] font-semibold leading-[1.15] text-[#262D30] md:text-[48px]">
               Start Your Next
               <br />
@@ -19,40 +19,41 @@ export function ContactSection() {
             </p>
           </div>
 
-          <form className="grid gap-6">
+          <form className="contact-form will-animate translate-x-8 grid gap-6" data-contact-form>
             <label className="grid gap-2 text-[12px] text-[#242424b3]">
               What are you interested in?*
-              <select className="h-12 rounded-[10px] border border-[#C8CDD2] bg-white text-[16px] text-[#121820]">
+              <select className="contact-field h-12 rounded-[10px] border border-[#C8CDD2] bg-white text-[16px] text-[#121820]">
                 <option>Select...</option>
               </select>
             </label>
             <label className="grid gap-2 text-[12px] text-[#242424b3]">
               What stage are you in your AI journey?*
-              <select className="h-12 rounded-[10px] border border-[#C8CDD2] bg-white text-[16px] text-[#121820]">
+              <select className="contact-field h-12 rounded-[10px] border border-[#C8CDD2] bg-white text-[16px] text-[#121820]">
                 <option>Select...</option>
               </select>
             </label>
             <div className="grid gap-5 md:grid-cols-2">
               <label className="grid gap-2 text-[12px] text-[#242424b3]">
                 Name*
-                <input className="h-12 rounded-[10px] border border-[#C8CDD2] bg-white text-[16px]" />
+                <input className="contact-field h-12 rounded-[10px] border border-[#C8CDD2] bg-white text-[16px]" />
               </label>
               <label className="grid gap-2 text-[12px] text-[#242424b3]">
                 Email*
                 <input
                   type="email"
-                  className="h-12 rounded-[10px] border border-[#C8CDD2] bg-white text-[16px]"
+                  className="contact-field h-12 rounded-[10px] border border-[#C8CDD2] bg-white text-[16px]"
                 />
               </label>
             </div>
             <label className="grid gap-2 text-[12px] text-[#242424b3]">
               Briefly describe your project-goals, challenges, and requirements,
               to help us assist you more effectively during our initial call.*
-              <textarea className="min-h-[110px] rounded-[10px] border border-[#C8CDD2] bg-white text-[16px]" />
+              <textarea className="contact-field min-h-[110px] rounded-[10px] border border-[#C8CDD2] bg-white text-[16px]" />
             </label>
             <button
               type="submit"
-              className="h-10 rounded-[10px] bg-[#333333] text-base font-semibold text-white"
+              className="contact-submit h-10 rounded-[10px] bg-[#333333] text-base font-semibold text-white"
+              data-submit-button
             >
               Submit
             </button>
@@ -69,10 +70,10 @@ interface ContactPageSectionProps {
 
 export function ContactPageSection({ className }: ContactPageSectionProps) {
   return (
-    <section className={cn("bg-white pt-[162px] pb-[100px]", className)}>
+    <section className={cn("contact-section bg-white pt-[162px] pb-[100px]", className)}>
       <Container>
         <div className="relative flex h-auto flex-col items-start justify-start gap-10 rounded-[24px] bg-[#F2F4F7] p-8 xl:flex-row xl:gap-8 xl:p-[64px]">
-          <div className="flex w-full flex-none flex-col items-start gap-4 xl:w-[calc((100%-32px)/2)]">
+          <div className="contact-left will-animate -translate-x-8 flex w-full flex-none flex-col items-start gap-4 xl:w-[calc((100%-32px)/2)]">
             <h2 className="m-0 w-full text-[40px] font-semibold leading-[46px] text-[#262D30] xl:max-w-[425px] xl:text-[48px] xl:leading-[57.6px]">
               Start Your Next
               <br />
@@ -85,12 +86,12 @@ export function ContactPageSection({ className }: ContactPageSectionProps) {
             </p>
           </div>
 
-          <form className="relative flex w-full flex-none flex-col items-start gap-5 [font-family:'Inter_Display','Inter',sans-serif] xl:w-[calc((100%-32px)/2)]">
+          <form className="contact-form will-animate translate-x-8 relative flex w-full flex-none flex-col items-start gap-5 [font-family:'Inter_Display','Inter',sans-serif] xl:w-[calc((100%-32px)/2)]" data-contact-form>
             <label className="relative flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[14.4px] text-[#242424b3] [font-family:'Inter_Display','Inter',sans-serif]">
               What are you interested in?*
               <select
                 defaultValue=""
-                className="h-[43.203px] w-full rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]"
+                className="contact-field h-[43.203px] w-full rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]"
               >
                 <option value="" disabled>
                   Select...
@@ -106,7 +107,7 @@ export function ContactPageSection({ className }: ContactPageSectionProps) {
               What stage are you in your AI journey?*
               <select
                 defaultValue=""
-                className="h-[43.203px] w-full rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]"
+                className="contact-field h-[43.203px] w-full rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]"
               >
                 <option value="" disabled>
                   Select...
@@ -121,13 +122,13 @@ export function ContactPageSection({ className }: ContactPageSectionProps) {
             <div className="flex w-full flex-col gap-5 md:flex-row">
               <label className="flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[14.4px] text-[#242424b3] [font-family:'Inter_Display','Inter',sans-serif]">
                 Name*
-                <input className="h-[43.203px] rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]" />
+                <input className="contact-field h-[43.203px] rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]" />
               </label>
               <label className="flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[14.4px] text-[#242424b3] [font-family:'Inter_Display','Inter',sans-serif]">
                 Email*
                 <input
                   type="email"
-                  className="h-[43.203px] rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]"
+                  className="contact-field h-[43.203px] rounded-[10px] border border-[#b8bcc2] bg-white px-3 text-[16px] font-normal leading-[19.2px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]"
                 />
               </label>
             </div>
@@ -135,12 +136,13 @@ export function ContactPageSection({ className }: ContactPageSectionProps) {
             <label className="flex w-full flex-col gap-[10px] text-[12px] font-medium leading-[16.8px] text-[#242424b3] [font-family:'Inter_Display','Inter',sans-serif]">
               Briefly describe your project&mdash;goals, challenges, and requirements,
               to help us assist you more effectively during our initial call.*
-              <textarea className="h-[100px] resize-y rounded-[10px] border border-[#b8bcc2] bg-white px-3 py-3 text-[16px] font-normal leading-[20.8px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]" />
+              <textarea className="contact-field h-[100px] resize-y rounded-[10px] border border-[#b8bcc2] bg-white px-3 py-3 text-[16px] font-normal leading-[20.8px] text-[#262D30] [font-family:'Inter_Display','Inter',sans-serif]" />
             </label>
 
             <button
               type="submit"
-              className="relative flex h-10 w-full items-center justify-center rounded-[10px] bg-[#333333] p-0 text-[14px] font-semibold leading-[16.8px] text-white transition-colors hover:bg-[rgba(51,51,51,0.85)] [font-family:'Inter_Display','Inter',sans-serif]"
+              className="contact-submit relative flex h-10 w-full items-center justify-center rounded-[10px] bg-[#333333] p-0 text-[14px] font-semibold leading-[16.8px] text-white transition-colors hover:bg-[rgba(51,51,51,0.85)] [font-family:'Inter_Display','Inter',sans-serif]"
+              data-submit-button
             >
               Submit
             </button>

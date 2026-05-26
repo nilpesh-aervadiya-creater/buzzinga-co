@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="page-animated">
         <AboutPageSections />
       </main>
       <Footer />

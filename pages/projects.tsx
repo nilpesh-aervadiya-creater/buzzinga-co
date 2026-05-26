@@ -7,7 +7,7 @@ export default function Projects() {
   return (
     <>
       <Header />
-      <main>
+      <main className="page-animated">
         <ProjectsSection title="Projects" description="" pageHeading />
         <ContactPageSection className="!pt-8" />
       </main>

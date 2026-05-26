@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
 import {
@@ -24,6 +25,40 @@ function AssetIcon({ src, alt, size = 48 }: { src: string; alt: string; size?: n
   );
 }
 
+function InlineSvgIcon({ src, alt, size = 80 }: { src: string; alt: string; size?: number }) {
+  const [svg, setSvg] = useState("");
+
+  useEffect(() => {
+    let active = true;
+
+    fetch(src)
+      .then((response) => response.text())
+      .then((text) => {
+        if (active) setSvg(text);
+      })
+      .catch(() => {
+        if (active) setSvg("");
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [src]);
+
+  if (!svg) {
+    return <span aria-label={alt} style={{ display: "inline-block", height: size, width: size }} />;
+  }
+
+  return (
+    <span
+      aria-label={alt}
+      className="value-inline-svg"
+      style={{ display: "inline-block", height: size, width: size }}
+      dangerouslySetInnerHTML={{ __html: svg }}
+    />
+  );
+}
+
 const CAPABILITY_POSITION_CLASSES = [
   "order-1",
   "order-2",
@@ -35,16 +70,16 @@ export function IntroSection() {
   const logoSlides = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
   return (
-    <section className="bg-white py-24 md:py-32">
+    <section className="intro-section bg-white py-24 md:py-32">
       <Container>
         <div className="max-w-[720px]">
-          <h2 className="text-[40px] font-semibold leading-[1.15] text-[#262D30] md:text-[52px]">
+          <h2 className="intro-heading will-animate text-[40px] font-semibold leading-[1.15] text-[#262D30] md:text-[52px]">
             We Build Intelligent Products That Transform Businesses
           </h2>
-          <p className="mt-6 text-[20px] leading-[1.55] text-[#262D30]">
+          <p className="intro-body will-animate mt-6 text-[20px] leading-[1.55] text-[#262D30]">
             We&apos;re not your typical agency. We&apos;re a team of designers,
             engineers, and AI specialists who believe that the future of product
-            development is AI-native from day one. We&apos;ve helped over 150
+            development is AI-native from day one. We&apos;ve helped over <span data-count-to="150">150+</span>
             companies across 12 industries ship better products, faster.
           </p>
         </div>
@@ -54,7 +89,7 @@ export function IntroSection() {
             {logoSlides.map((logo, index) => (
               <div
                 key={`${logo.src}-${index}`}
-                className="flex h-[76px] w-[210px] flex-none items-center justify-center"
+                className="logo-reveal-item flex h-[76px] w-[210px] flex-none items-center justify-center"
               >
                 <Image
                   src={logo.src}
@@ -82,12 +117,12 @@ function CapabilityCards() {
   ];
 
   return (
-    <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <div className="capabilities-grid mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
       {orderedCapabilities.map((capability, index) => (
         <article
           key={capability.title}
           className={cn(
-            "mobile-capability-card group flex h-[250px] flex-col overflow-hidden rounded-2xl border border-[#D0D5DB] bg-transparent p-4 transition-[height,box-shadow] duration-300 hover:h-[338px] focus-within:h-[338px] focus-within:shadow-[0_18px_42px_rgba(18,24,32,0.08)]",
+            "capability-tile will-animate mobile-capability-card group flex h-[250px] flex-col overflow-hidden rounded-2xl border border-[#D0D5DB] bg-transparent p-4 transition-[height,box-shadow] duration-300 hover:h-[338px] focus-within:h-[338px] focus-within:shadow-[0_18px_42px_rgba(18,24,32,0.08)]",
             CAPABILITY_POSITION_CLASSES[index]
           )}
           tabIndex={0}
@@ -117,22 +152,22 @@ function CapabilityCards() {
 
 export function CapabilitiesSection() {
   return (
-    <section className="bg-[#F2F4F7] py-20 md:py-24">
+    <section className="capabilities-section bg-[#F2F4F7] py-20 md:py-24">
       <Container>
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <h2 className="section-heading text-[40px] font-semibold leading-[1.08] text-[#262D30]">
+            <h2 className="capabilities-heading will-animate section-heading text-[40px] font-semibold leading-[1.08] text-[#262D30]">
               From Idea to Intelligence,
               <br />
               Our Capabilities
             </h2>
-            <p className="mt-6 text-[20px] text-[#262D30]">
+            <p className="capabilities-subtext will-animate mt-6 text-[20px] text-[#262D30]">
               We integrate design, development, and AI into every layer of your
               product journey.
             </p>
           </div>
-          <Link href="/ai-native-capabilities" className="text-[20px] text-[#262D30]">
-            View Capabilities -&gt;
+          <Link href="/ai-native-capabilities" className="capabilities-link text-[20px] text-[#262D30]">
+            View Capabilities <span className="capabilities-arrow">-&gt;</span>
           </Link>
         </div>
 
@@ -144,10 +179,10 @@ export function CapabilitiesSection() {
 
 export function WhyClientsStaySection() {
   return (
-    <section className="bg-white py-24 md:py-32">
+    <section className="values-section bg-white py-24 md:py-32">
       <Container>
         <div className="grid gap-14 md:grid-cols-[0.8fr_1.2fr]">
-          <div>
+          <div className="values-left will-animate -translate-x-10">
             <h2 className="text-[40px] font-semibold leading-[1.15] text-[#262D30] md:text-[52px]">
               Why Clients Stay
               <br />
@@ -161,16 +196,18 @@ export function WhyClientsStaySection() {
             </p>
             <Link
               href="/ai-native-capabilities"
-              className="mt-8 inline-block text-[20px] text-[#262D30]"
+              className="capabilities-link mt-8 inline-block text-[20px] text-[#262D30]"
             >
-              View Capabilities -&gt;
+              View Capabilities <span className="capabilities-arrow">-&gt;</span>
             </Link>
           </div>
 
-          <div className="grid gap-x-20 gap-y-12 md:grid-cols-2">
+          <div className="values-grid grid gap-x-20 gap-y-12 md:grid-cols-2">
           {WHY_CLIENTS_STAY.map((item) => (
-              <article key={item.title}>
-                <AssetIcon src={item.icon} alt="" size={80} />
+              <article key={item.title} className="value-tile will-animate">
+                <span className="value-icon inline-block">
+                  <InlineSvgIcon src={item.icon} alt="" size={80} />
+                </span>
                 <h3 className="mt-6 text-[22px] font-semibold text-[#121820]">
                   {item.title}
                 </h3>

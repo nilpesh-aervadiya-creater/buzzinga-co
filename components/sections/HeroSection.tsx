@@ -1,5 +1,4 @@
 import Image from "next/image";
-import TextFillAnimation from "@/components/Animations/TextFillAnimation/TextFillAnimation";
 
 const STRIP_IMAGES = [
   {
@@ -39,17 +38,12 @@ export default function HeroSection() {
     <section className="w-full bg-white pt-[164px] pb-0">
       {/* Hero text block */}
       <div className="mx-auto w-full px-6 text-center">
-        <TextFillAnimation
-          as="h1"
-          className="text-[28px] leading-[1.1] font-semibold text-[#262D30] tracking-normal min-[810px]:text-[44px] xl:text-[56px]"
-          color="#262D30"
-        >
-          Ship Better Products, Faster,
-          <br />
-          With AI&#8209;Native Design &amp; Development
-        </TextFillAnimation>
+        <h1 className="text-[28px] leading-[1.1] font-semibold text-[#262D30] tracking-normal min-[810px]:text-[44px] xl:text-[56px]">
+          <span className="hero-line block">Ship Better Products, Faster,</span>
+          <span className="hero-line block">With AI&#8209;Native Design &amp; Development</span>
+        </h1>
 
-        <div className="mt-6 flex flex-col items-center gap-0">
+        <div className="hero-subtext mt-6 flex flex-col items-center gap-0">
           <p className="text-[18px] leading-[1.5] text-[#262D30] md:text-[20px]">
             We blend design, engineering, and AI to deliver better outcomes, faster.
           </p>
@@ -61,7 +55,7 @@ export default function HeroSection() {
 
       {/* Image slider */}
       <div className="hero-motion-slider w-full overflow-hidden">
-        <div className="hero-motion-track flex w-max items-end">
+        <div className="hero-motion-track marquee-track flex w-max items-end">
           {sliderImages.map((img, i) => (
             <div key={`${img.src}-${i}`} className="hero-motion-card shrink-0 overflow-hidden rounded-2xl">
               <Image

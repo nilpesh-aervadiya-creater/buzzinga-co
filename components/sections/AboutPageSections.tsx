@@ -236,8 +236,8 @@ function ClientStayPromptSection() {
       </button>
 
       <div
-        className={`grid w-full max-w-[1200px] transition-[grid-template-rows,opacity,margin-top] duration-300 ease-out max-[1439px]:w-[calc(100%-128px)] max-[1439px]:max-w-none max-[1279px]:w-[calc(100%-64px)] max-[809px]:w-full ${
-          isOpen ? "mt-10 grid-rows-[1fr] opacity-100 max-[809px]:mt-8" : "mt-0 grid-rows-[0fr] opacity-0"
+        className={`grid w-full max-w-[1200px] transition-[grid-template-rows,margin-top] duration-300 ease-out max-[1439px]:w-[calc(100%-128px)] max-[1439px]:max-w-none max-[1279px]:w-[calc(100%-64px)] max-[809px]:w-full ${
+          isOpen ? "mt-10 grid-rows-[1fr] opacity-100 max-[809px]:mt-8" : "mt-0 grid-rows-[0fr] opacity-100"
         }`}
       >
         <div className={`flex min-h-0 w-full flex-col overflow-hidden ${isOpen ? 'pb-20 pt-2' : ''} text-white max-[809px]:pb-0 max-[809px]:pt-0`}>
