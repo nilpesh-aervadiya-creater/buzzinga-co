@@ -18,8 +18,8 @@ export default function Header() {
 
   return (
     <header
-      className={`site-header fixed left-0 right-0 top-0 z-50 backdrop-blur-[10px] transition-[height] duration-300 z-[10000] ${
-        isScrolled ? "h-[58px] bg-white/70 border-b border-[#242424]/10" : "h-[64px] md:h-[78px]"
+      className={`site-header fixed left-0 right-0 top-0 z-50 transition-[height] duration-300 z-[10000] ${
+        isScrolled ? "h-[58px] bg-white/70 border-b border-[#242424]/10 backdrop-blur-[10px]" : "h-[64px] md:h-[78px]"
       }`}
     >
       <div className="mx-auto flex h-full w-full max-w-[1920px] items-center justify-between px-4 min-[810px]:px-6 xl:px-10">

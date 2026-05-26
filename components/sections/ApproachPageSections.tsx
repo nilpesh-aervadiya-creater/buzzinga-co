@@ -47,23 +47,23 @@ const CONNECTIONS = [
     label: "Logic & Pattern",
     text: "Surfaces insights and accelerates creation.",
     className: "bg-[#E7ECF1] text-[#121820]",
-    widthClass: "xl:w-[430px]",
+    widthClass: "xl:w-[396px]",
     lineClass: "xl:w-[153px]",
   },
   {
     lead: "Human",
     label: "Strategy & Creativity",
     text: "Guides context, empathy, and direction.",
-    className: "bg-[#B8BEC7] text-[#121820]",
-    widthClass: "xl:w-[434px]",
-    lineClass: "xl:w-[78px]",
+    className: "bg-[#B4BAC2] text-[#121820]",
+    widthClass: "xl:w-[402px]",
+    lineClass: "flex-1",
   },
   {
     lead: "Outcomes",
     label: "Compounded Value",
     text: "Deliver systems that improve on their own",
-    className: "bg-[#292D30] text-white",
-    widthClass: "xl:w-[403px]",
+    className: "bg-[#2A2D30] text-white",
+    widthClass: "xl:w-[402px]",
     lineClass: "xl:w-10",
   },
 ] as const;
@@ -145,35 +145,33 @@ export default function ApproachPageSections() {
         </Container>
       </section>
 
-      <section className="bg-[#F2F4F7] py-16 md:py-12">
+      <section className="bg-[#F2F4F7] py-16 xl:py-[100px]">
         <Container className="max-w-[1200px]">
-          <div className="max-w-[520px]">
+          <div className="max-w-[520px] xl:max-w-[660px]">
             <h2 className="text-[24px] font-semibold leading-[28.8px] text-[#262D30] min-[810px]:text-[44px] min-[810px]:leading-[1.12] xl:text-[52px]">
               How It All Connects
             </h2>
-            <p className="mt-2 text-[20px] leading-[1.5] text-[#0E171D] md:text-[21px]">
+            <p className="mt-2 text-[20px] leading-[1.5] text-[#0E171D] md:text-[21px] xl:max-w-[429px]">
               A single wave of intelligence flows through each stage of our process:
             </p>
           </div>
 
-          <div className="mt-14 grid overflow-hidden rounded-[14px] xl:flex xl:overflow-visible xl:rounded-none">
+          <div className="mt-10 grid overflow-hidden rounded-[16px] xl:mt-12 lg:flex xl:overflow-visible" style={{background: "linear-gradient(270deg, rgb(231, 234, 238) 0%, rgb(180, 188, 193) 37.3768%, rgb(232, 236, 239) 64%)"}}>
             {CONNECTIONS.map((item, index) => (
               <article
                 key={item.lead}
-                className={`flex min-h-[216px] flex-col justify-between p-6 ${item.className} ${item.widthClass} ${
-                  index > 0 ? "xl:-ml-[33px]" : ""
-                } xl:rounded-[14px]`}
+                className={`flex flex-1 flex-col p-6 xl:min-h-[216px] xl:justify-between ${item.className} ${item.widthClass} xl:rounded-[16px]`}
               >
-                <div className="flex flex-wrap items-center gap-3 xl:flex-nowrap xl:gap-5">
+                <div className="flex flex-nowrap items-center gap-5">
                   <p className="text-[14px] font-semibold leading-[1.3] xl:shrink-0 xl:text-[20px]">
                     {item.lead}
                   </p>
-                  <span className={`h-px w-20 bg-current opacity-80 ${item.lineClass}`} />
+                  <span className={`h-px flex-1 bg-current opacity-80 ${item.lineClass}`} />
                   <p className="text-[14px] font-semibold leading-[1.3] xl:shrink-0 xl:text-[20px]">
                     {item.label}
                   </p>
                 </div>
-                <p className="mt-10 text-[15px] leading-[1.45] xl:mt-12 xl:text-[18px]">{item.text}</p>
+                <p className="mt-3 text-[15px] leading-[1.45] xl:mt-12 xl:text-[18px]">{item.text}</p>
               </article>
             ))}
           </div>

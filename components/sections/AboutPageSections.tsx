@@ -81,7 +81,7 @@ const FAQ_ITEMS = [
 
 function AboutHeroSection() {
   return (
-    <section className="relative flex h-[648px] w-full flex-col items-center justify-end gap-[90px] overflow-hidden bg-white px-16 pt-[162px] pb-20 [font-family:'Inter_Display','Inter',sans-serif] max-[809px]:h-[650px] max-[809px]:gap-10 max-[809px]:px-4 max-[809px]:pt-[120px] max-[809px]:pb-12">
+    <section className="relative flex h-[90vh] w-full flex-col items-center justify-end gap-[90px] overflow-hidden bg-white px-16 pt-[162px] pb-20 [font-family:'Inter_Display','Inter',sans-serif] min-[1440px]:px-0 min-[1440px]:pb-[100px] max-[1199px]:px-8 max-[1199px]:pt-0 max-[1199px]:pb-12 max-[809px]:h-[90vh] max-[809px]:gap-10 max-[809px]:px-4 max-[809px]:pt-[120px] max-[809px]:pb-12">
       <Image
         src="/buzzinga-assets/images/about/about-hero-sky.jpg"
         alt=""
@@ -90,7 +90,7 @@ function AboutHeroSection() {
         sizes="100vw"
         className="absolute inset-0 z-0 object-cover object-center"
       />
-      <div className="relative z-10 flex w-full max-w-[1200px] flex-col items-start justify-start gap-8 max-[1439px]:w-full max-[1279px]:w-full max-[809px]:max-w-[1200px] max-[809px]:gap-6">
+      <div className="relative z-10 flex w-full max-w-[1200px] flex-col items-start justify-start gap-8 max-[1439px]:w-full max-[1279px]:w-full max-[1199px]:max-w-[960px] max-[809px]:max-w-[1200px] max-[809px]:gap-6">
         <div className="hidden w-4/5 flex-col items-start justify-start gap-8 min-[810px]:flex">
           <h1 className="m-0 w-full text-[56px] font-semibold leading-[61.6px] text-[#262D30] max-[1279px]:text-[44px] max-[1279px]:leading-[52.8px]">
             Every pixel, every line of code, every decision carries our
