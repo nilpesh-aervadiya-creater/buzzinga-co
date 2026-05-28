@@ -1,3 +1,4 @@
+import "quill/dist/quill.snow.css";
 import "@/styles/globals.css";
 import "@/styles/animations.css";
 import type { AppProps } from "next/app";

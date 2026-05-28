@@ -1,0 +1,136 @@
+import Image from "next/image";
+import Link from "next/link";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { readBlogPosts } from "@/lib/blog-store";
+import type { BlogPost } from "@/constants/blog-content";
+import type { GetServerSideProps } from "next";
+
+interface BlogPostPageProps {
+  post: BlogPost;
+  nextPost: BlogPost | null;
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function formatDescriptionHtml(value: string) {
+  const description = value.trim();
+
+  if (/<[a-z][\s\S]*>/i.test(description)) {
+    return description;
+  }
+
+  return description
+    .split(/\n{2,}/)
+    .map((paragraph) => `<p>${escapeHtml(paragraph).replace(/\n/g, "<br />")}</p>`)
+    .join("");
+}
+
+export const getServerSideProps = (async ({ params }) => {
+  const idParam = params?.id;
+  const id = Array.isArray(idParam) ? idParam[0] : idParam;
+
+  if (!id) {
+    return { notFound: true };
+  }
+
+  const posts = await readBlogPosts();
+  const publishedPosts = posts.filter((currentPost) => currentPost.published);
+  const postIndex = publishedPosts.findIndex((currentPost) => currentPost.id === id);
+  const post = postIndex >= 0 ? publishedPosts[postIndex] : null;
+
+  if (!post) {
+    return { notFound: true };
+  }
+
+  const nextPost =
+    publishedPosts.length > 1 ? publishedPosts[(postIndex + 1) % publishedPosts.length] : null;
+
+  return {
+    props: {
+      post,
+      nextPost,
+    },
+  };
+}) satisfies GetServerSideProps<BlogPostPageProps>;
+
+export default function BlogPostPage({ post, nextPost }: BlogPostPageProps) {
+  const descriptionHtml = formatDescriptionHtml(post.description || post.excerpt);
+
+  return (
+    <>
+      <Header />
+      <main>
+        <article className="flex w-full flex-col items-center bg-white px-4 pt-[120px] pb-16 min-[810px]:pt-[120px] min-[1280px]:px-10 min-[1280px]:pt-[162px] min-[1280px]:pb-[100px]">
+          <div className="flex w-full max-w-[1200px] flex-col items-center">
+            <div
+              className="flex items-center justify-center gap-4 text-center text-[16px] font-normal leading-[25.6px] text-[#888]"
+              style={{ fontFeatureSettings: "'zero' 1, 'cv11' 1, 'ss01' 1" }}
+            >
+              <span>{post.date}</span>
+              <span>/</span>
+              <div className="flex items-center gap-[6px]">
+                <span>{post.readTime}</span>
+                <span>min read</span>
+              </div>
+            </div>
+
+            <h1 className="mt-4 mb-0 w-full text-center text-[28px] font-semibold leading-[33.6px] text-[#262D30] min-[1280px]:mt-4 min-[1280px]:text-[56px] min-[1280px]:leading-[61.6px]">
+              {post.title}
+            </h1>
+
+            <p className="mt-4 mb-0 w-full max-w-[700px] text-left text-[16px] font-normal leading-6 text-[rgba(36,36,36,0.7)] min-[810px]:text-center min-[1280px]:text-[20px] min-[1280px]:leading-8">
+              {post.excerpt}
+            </p>
+
+            <Image
+              src={post.image}
+              alt={post.imageAlt}
+              width={1200}
+              height={677}
+              className="mt-6 h-[677px] w-full object-cover min-[1280px]:mt-16 min-[1280px]:rounded-[32px]"
+              unoptimized
+              priority
+            />
+
+            <div
+              className="mt-16 w-full max-w-[600px] text-[16px] font-normal leading-6 text-[#262D30] min-[1280px]:text-[20px] min-[1280px]:leading-8 [&_a]:text-[#262D30] [&_a]:underline [&_code]:rounded-[4px] [&_code]:bg-[#F2F4F7] [&_code]:px-1 [&_h2]:mt-8 [&_h2]:mb-0 [&_h2]:text-[20px] [&_h2]:font-semibold [&_h2]:leading-[26px] [&_h2:first-child]:mt-0 min-[1280px]:[&_h2]:text-[40px] min-[1280px]:[&_h2]:leading-[48px] [&_h3]:mt-8 [&_h3]:mb-0 [&_h3]:text-[20px] [&_h3]:font-semibold [&_h3]:leading-[26px] [&_h3:first-child]:mt-0 min-[1280px]:[&_h3]:text-[40px] min-[1280px]:[&_h3]:leading-[48px] [&_li]:ml-5 [&_p]:mt-4 [&_p]:mb-0 [&_ul]:my-4 [&_ul]:list-disc"
+              dangerouslySetInnerHTML={{ __html: descriptionHtml }}
+            />
+
+            {nextPost ? (
+              <>
+                <div className="mt-16 h-px w-full max-w-[600px] bg-[#EBEBEB]" />
+                <Link
+                  href={`/blog/${encodeURIComponent(nextPost.id)}`}
+                  className="mt-16 flex w-full max-w-[600px] items-start justify-start gap-2 rounded-[16px] bg-[#F2F4F7] p-6 text-[#262D30]"
+                  aria-label={`Next Read: ${nextPost.title}`}
+                >
+                  <div className="flex flex-1 flex-col gap-[10px]">
+                    <p className="m-0 text-[16px] font-normal leading-6 text-[rgba(36,36,36,0.7)] min-[1280px]:text-[20px] min-[1280px]:leading-8">
+                      Next Read
+                    </p>
+                    <p className="m-0 text-[24px] font-semibold leading-[33.6px] text-[#262D30]">
+                      {nextPost.title}
+                    </p>
+                  </div>
+                  <span className="text-[16px] font-normal leading-6 text-[rgba(36,36,36,0.7)] min-[1280px]:text-[20px] min-[1280px]:leading-8">
+                    -&gt;
+                  </span>
+                </Link>
+              </>
+            ) : null}
+          </div>
+        </article>
+      </main>
+      <Footer />
+    </>
+  );
+}
