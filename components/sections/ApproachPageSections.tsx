@@ -157,7 +157,7 @@ export default function ApproachPageSections() {
           </div>
 
           <div className="mt-10 grid overflow-hidden rounded-[16px] xl:mt-12 lg:flex xl:overflow-visible" style={{background: "linear-gradient(270deg, rgb(231, 234, 238) 0%, rgb(180, 188, 193) 37.3768%, rgb(232, 236, 239) 64%)"}}>
-            {CONNECTIONS.map((item, index) => (
+            {CONNECTIONS.map((item) => (
               <article
                 key={item.lead}
                 className={`flex flex-1 flex-col p-6 xl:min-h-[216px] xl:justify-between ${item.className} ${item.widthClass} xl:rounded-[16px]`}

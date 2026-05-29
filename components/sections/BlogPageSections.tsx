@@ -70,7 +70,7 @@ export default function BlogPageSections({ posts }: BlogPageSectionsProps) {
 
           <div className="flex w-full flex-col gap-5">
             {visiblePosts.length === 0 ? (
-              <p className="m-0 text-center text-[16px] font-normal leading-[25.6px] text-[#242424b3]">
+              <p className="m-0 text-center text-[16px] font-normal leading-[25.6px] text-[#242424b3] py-16">
                 {activeFilter === "All" ? "No blog posts are available." : `No blog posts are available in ${activeFilter}.`}
               </p>
             ) : (
