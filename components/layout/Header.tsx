@@ -18,8 +18,8 @@ export default function Header() {
 
   return (
     <header
-      className={`site-header fixed left-0 right-0 top-0 z-50 transition-[height] duration-300 z-[10000] ${
-        isScrolled ? "h-[58px] bg-white/70 border-b border-[#242424]/10 backdrop-blur-[10px]" : "h-[64px] md:h-[78px]"
+      className={`site-header fixed left-0 right-0 top-0 z-50 transition-[height] duration-300 z-[10000] ${menuOpen ? 'bg-white/90' : ''} ${
+        isScrolled || menuOpen ? "h-[58px] bg-white/70 border-b border-[#242424]/10 backdrop-blur-[10px]" : "h-[64px] md:h-[78px]"
       }`}
     >
       <div className="mx-auto flex h-full w-full max-w-[1920px] items-center justify-between px-4 min-[810px]:px-6 xl:px-10">
@@ -77,7 +77,7 @@ export default function Header() {
 
       <div
         className={`absolute left-0 right-0 overflow-hidden border-t border-[#EBEBEB] bg-white/90 shadow-sm backdrop-blur-[10px] transition-[max-height,opacity,transform] duration-300 ease-out min-[810px]:hidden ${
-          isScrolled ? "top-[58px]" : "top-[64px]"
+          isScrolled ? "top-[58px]" : "top-[58px]"
         } ${menuOpen ? "max-h-[420px] translate-y-0 opacity-100" : "max-h-0 -translate-y-2 opacity-0"}`}
       >
         <div className="flex flex-col items-start gap-5 px-4 py-6">

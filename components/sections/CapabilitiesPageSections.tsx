@@ -615,26 +615,26 @@ export default function CapabilitiesPageSections() {
         </Container>
       </section>
 
-      <section className="bg-white py-12 [font-family:'Inter_Display','Inter',sans-serif] min-[810px]:py-[100px]">
-        <Container className="flex max-w-[1200px] flex-col items-center gap-12 min-[810px]:gap-20">
+      <section className="bg-white py-8 [font-family:'Inter_Display','Inter',sans-serif] min-[810px]:py-16 min-[1280px]:py-20 min-[1440px]:py-[100px]">
+        <Container className="flex !max-w-none flex-col items-center gap-8 px-4 min-[810px]:gap-12 min-[810px]:px-8 min-[1280px]:gap-16 min-[1280px]:!px-16 min-[1440px]:!max-w-[1200px] min-[1440px]:!px-0">
           {CAPABILITY_DETAILS.map((capability) => (
             <article
               key={capability.title}
-              className="flex w-full flex-col items-start justify-center gap-8 rounded-2xl xl:flex-row xl:gap-16"
+              className="flex w-full flex-col items-start justify-center gap-2 rounded-2xl min-[1024px]:flex-row min-[1024px]:gap-4 min-[1280px]:gap-12 min-[1440px]:gap-16"
             >
-              <div className="flex w-full flex-col items-center justify-center gap-0 xl:w-[568px]">
-                <h3 className="m-0 w-full text-[24px] font-semibold leading-[28.8px] text-[#262D30] min-[810px]:text-[40px] min-[810px]:leading-[48px]">
+              <div className="flex w-full flex-col items-center justify-center gap-0 min-[1024px]:w-[40%] min-[1280px]:w-[calc((100%-48px)/2)] min-[1440px]:w-[568px]">
+                <h3 className="m-0 w-full text-[20px] font-semibold leading-[26px] text-[#262D30] min-[1024px]:text-[26px] min-[1024px]:leading-[31.2px] min-[1280px]:text-[40px] min-[1280px]:leading-[48px]">
                   {capability.title}
                 </h3>
                 <h3
-                  className="m-0 w-full text-[24px] font-semibold leading-[28.8px] min-[810px]:text-[40px] min-[810px]:leading-[48px]"
+                  className="m-0 w-full text-[20px] font-semibold leading-[26px] min-[1024px]:text-[26px] min-[1024px]:leading-[31.2px] min-[1280px]:text-[40px] min-[1280px]:leading-[48px]"
                   style={{ color: capability.serviceColor }}
                 >
                   {capability.service}
                 </h3>
               </div>
 
-              <div className="flex w-full flex-col items-center justify-center gap-0 xl:w-[568px]">
+              <div className="flex w-full flex-col items-center justify-center gap-0 min-[1024px]:w-[calc(60%-16px)] min-[1280px]:w-[calc((100%-48px)/2)] min-[1440px]:w-[568px]">
                 <div className="flex h-[22px] w-full items-center justify-center gap-2.5 py-2.5">
                   <div className="h-0.5 w-full bg-[#262D30]" />
                 </div>
@@ -642,16 +642,16 @@ export default function CapabilitiesPageSections() {
                 {capability.details.map((detail) => (
                   <div
                     key={detail.label}
-                    className="flex w-full items-start justify-center gap-2.5 py-2.5"
+                    className="flex w-full flex-col items-start justify-center gap-1.5 py-2.5 min-[1024px]:flex-row min-[1024px]:gap-2.5"
                   >
-                    <div className="flex w-[34%] flex-col items-center justify-center gap-0 xl:w-[186px]">
-                      <p className="m-0 w-full text-[16px] font-normal leading-[25.6px] text-[#262D30]">
+                    <div className="flex w-full flex-col items-center justify-center gap-0 min-[1024px]:w-[33.333%] min-[1280px]:w-[180.672px] min-[1440px]:w-[186px]">
+                      <p className="m-0 w-full text-[16px] font-semibold leading-6 text-[#262D30] min-[1024px]:text-[14px] min-[1024px]:font-normal min-[1024px]:leading-[22.4px] min-[1280px]:text-[16px] min-[1280px]:leading-[25.6px]">
                         {detail.label}
                       </p>
                     </div>
-                    <div className="flex w-[66%] items-end justify-center gap-2.5 xl:w-[372px]">
+                    <div className="flex w-full items-end justify-center gap-2.5 min-[1024px]:w-[66.667%] min-[1280px]:w-[361.328px] min-[1440px]:w-[372px]">
                       <p
-                        className="m-0 w-full text-[16px] font-normal leading-[25.6px] text-[#262D30]"
+                        className="m-0 w-full text-[16px] font-normal leading-[25.6px] text-[#262D30] min-[1024px]:text-[14px] min-[1024px]:leading-[22.4px] min-[1280px]:text-[16px] min-[1280px]:leading-[25.6px]"
                         dangerouslySetInnerHTML={{ __html: detail.text }}
                       />
                     </div>
