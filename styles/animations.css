@@ -243,3 +243,10 @@
     transform: none;
   }
 }
+
+
+@media (max-width: 576px) {
+  .testimonial-quote {
+    max-width: 1072px;
+  }
+}

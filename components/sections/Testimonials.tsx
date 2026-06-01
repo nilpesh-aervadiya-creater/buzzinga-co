@@ -50,7 +50,7 @@ export default function Testimonials({
 
           <div className="mx-auto max-w-[1072px] overflow-hidden">
             <ul
-              className="m-0 flex list-none p-0 transition-transform duration-500 ease-out"
+              className="testimonials-slider m-0 flex list-none p-0 transition-transform duration-500 ease-out"
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
               {TESTIMONIALS.map((testimonial) => (
@@ -61,10 +61,10 @@ export default function Testimonials({
                   <blockquote className="testimonial-quote m-0 mx-auto text-[20px] font-light italic leading-[26px] text-[#262D30] lg:text-[28px] lg:leading-[36.4px] xl:text-[36px] xl:leading-[54px]">
                     &quot;{testimonial.quote}&quot;
                   </blockquote>
-                  <p className="mt-10 mb-0 text-2xl font-semibold leading-8 text-[#121820]">
+                  <p className="mt-10 mb-0 sm:text-2xl text-xl font-semibold leading-8 text-[#121820]">
                     {testimonial.name}
                   </p>
-                  <p className="mt-1 mb-0 text-2xl font-normal leading-8 text-[#121820]">
+                  <p className="mt-1 mb-0 sm:text-2xl text-xl font-normal leading-8 text-[#121820]">
                     {testimonial.company}
                   </p>
                 </li>
