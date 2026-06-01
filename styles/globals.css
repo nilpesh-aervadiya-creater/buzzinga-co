@@ -360,3 +360,25 @@ select {
     --section-heading-line-height: 57.6px;
   }
 }
+
+.ql-editor-output a {
+  color: #0000ee;
+}
+
+.ql-align-center {
+  text-align: center;
+}
+
+.ql-align-right {
+  text-align: right;
+}
+
+.ql-align-center img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ql-align-right img {
+  margin-left: auto;
+  margin-right: 0;
+}
