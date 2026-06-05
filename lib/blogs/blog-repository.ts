@@ -14,19 +14,46 @@ function getDateTime(value: string) {
 function normalizePost(post: BlogPost): BlogPost {
   const title = post.title.trim();
   const excerpt = post.excerpt.trim();
+  const description = (post.description ?? excerpt).trim();
+  const contentBlocks = Array.isArray(post.contentBlocks) && post.contentBlocks.length > 0
+    ? post.contentBlocks
+        .map((block) => {
+          if (block.type === "image") {
+            return {
+              id: block.id.trim() || `image-${post.id}`,
+              type: "image" as const,
+              value: block.value.trim(),
+              imageAlt: (block.imageAlt ?? "").trim(),
+            };
+          }
+
+          return {
+            id: block.id.trim() || `description-${post.id}`,
+            type: "description" as const,
+            value: block.value.trim(),
+          };
+        })
+        .filter((block) => block.value)
+    : [
+        { id: `image-${post.id}`, type: "image" as const, value: post.image.trim(), imageAlt: post.imageAlt.trim() || title },
+        { id: `description-${post.id}`, type: "description" as const, value: description },
+      ].filter((block) => block.value);
+  const firstImage = contentBlocks.find((block) => block.type === "image");
+  const firstDescription = contentBlocks.find((block) => block.type === "description");
 
   return {
     ...post,
     id: post.id.trim(),
     title,
     excerpt,
-    description: (post.description ?? excerpt).trim(),
+    description: firstDescription?.value ?? description,
     category: post.category.trim(),
     date: post.date.trim(),
     readTime: post.readTime.trim(),
-    image: post.image.trim(),
-    imageAlt: post.imageAlt.trim() || title,
+    image: firstImage?.value ?? post.image.trim(),
+    imageAlt: firstImage?.type === "image" ? firstImage.imageAlt || post.imageAlt.trim() || title : post.imageAlt.trim() || title,
     published: Boolean(post.published),
+    contentBlocks,
   };
 }
 

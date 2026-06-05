@@ -62,7 +62,12 @@ export const getServerSideProps = (async ({ params }) => {
 }) satisfies GetServerSideProps<BlogPostPageProps>;
 
 export default function BlogPostPage({ post, nextPost }: BlogPostPageProps) {
-  const descriptionHtml = formatDescriptionHtml(post.description || post.excerpt);
+  const contentBlocks = post.contentBlocks && post.contentBlocks.length > 0
+    ? post.contentBlocks
+    : [
+        { id: "image-default", type: "image" as const, value: post.image, imageAlt: post.imageAlt },
+        { id: "description-default", type: "description" as const, value: post.description || post.excerpt },
+      ];
 
   return (
     <>
@@ -90,20 +95,41 @@ export default function BlogPostPage({ post, nextPost }: BlogPostPageProps) {
               {post.excerpt}
             </p>
 
-            <Image
-              src={post.image}
-              alt={post.imageAlt}
-              width={1200}
-              height={677}
-              className="mt-6 h-[677px] w-full object-cover min-[1280px]:mt-16 min-[1280px]:rounded-[32px]"
-              unoptimized
-              priority
-            />
+            <div className="mt-6 flex w-full flex-col items-center gap-16 min-[1280px]:mt-16">
+              {contentBlocks.map((block, index) => {
+                if (block.type === "image") {
+                  const imagePosition = contentBlocks.slice(0, index + 1).filter((contentBlock) => contentBlock.type === "image").length;
+                  const isFirstImage = imagePosition === 1;
 
-            <div
-              className="ql-editor ql-editor-output mt-16 w-full max-w-[600px] text-[16px] font-normal leading-6 text-[#262D30] min-[1280px]:text-[20px] min-[1280px]:leading-8 [&_a]:text-[#262D30] [&_a]:underline [&_code]:rounded-[4px] [&_code]:bg-[#F2F4F7] [&_code]:px-1 [&_h2]:mt-8 [&_h2]:mb-0 [&_h2]:text-[20px] [&_h2]:font-semibold [&_h2]:leading-[26px] [&_h2:first-child]:mt-0 min-[1280px]:[&_h2]:text-[40px] min-[1280px]:[&_h2]:leading-[48px] [&_h3]:mt-8 [&_h3]:mb-0 [&_h3]:text-[20px] [&_h3]:font-semibold [&_h3]:leading-[26px] [&_h3:first-child]:mt-0 min-[1280px]:[&_h3]:text-[40px] min-[1280px]:[&_h3]:leading-[48px] [&_li]:ml-5 [&_p]:mt-4 [&_p]:mb-0 [&_ul]:my-4 [&_ul]:list-disc"
-              dangerouslySetInnerHTML={{ __html: descriptionHtml }}
-            />
+                  return (
+                    <div
+                      key={block.id}
+                      className={`${isFirstImage ? "w-full" : "w-full max-w-[600px]"} rounded-[28px] border-[8px] border-[#F1F1F1] bg-white p-[7px] shadow-[0_18px_48px_rgba(0,0,0,0.14)] min-[1280px]:rounded-[40px]`}
+                    >
+                      <div className={`${isFirstImage ? "h-[677px]" : "aspect-[1200/677]"} relative w-full overflow-hidden rounded-[18px] border border-[#D0D0D0] bg-[#C9C9C9] min-[1280px]:rounded-[28px]`}>
+                        <Image
+                          src={block.value}
+                          alt={block.imageAlt || post.title}
+                          fill
+                          sizes={isFirstImage ? "(min-width: 1280px) 1200px, calc(100vw - 62px)" : "(min-width: 1280px) 600px, calc(100vw - 62px)"}
+                          className="object-cover"
+                          unoptimized
+                          priority={isFirstImage}
+                        />
+                      </div>
+                    </div>
+                  );
+                }
+
+                return (
+                  <div
+                    key={block.id}
+                    className="ql-editor ql-editor-output w-full max-w-[600px] text-[16px] font-normal leading-6 text-[#262D30] min-[1280px]:text-[20px] min-[1280px]:leading-8 [&_a]:text-[#262D30] [&_a]:underline [&_code]:rounded-[4px] [&_code]:bg-[#F2F4F7] [&_code]:px-1 [&_h2]:mt-8 [&_h2]:mb-0 [&_h2]:text-[20px] [&_h2]:font-semibold [&_h2]:leading-[26px] [&_h2:first-child]:mt-0 min-[1280px]:[&_h2]:text-[40px] min-[1280px]:[&_h2]:leading-[48px] [&_h3]:mt-8 [&_h3]:mb-0 [&_h3]:text-[20px] [&_h3]:font-semibold [&_h3]:leading-[26px] [&_h3:first-child]:mt-0 min-[1280px]:[&_h3]:text-[40px] min-[1280px]:[&_h3]:leading-[48px] [&_li]:ml-5 [&_p]:mt-4 [&_p]:mb-0 [&_ul]:my-4 [&_ul]:list-disc"
+                    dangerouslySetInnerHTML={{ __html: formatDescriptionHtml(block.value) }}
+                  />
+                );
+              })}
+            </div>
 
             {nextPost ? (
               <>
