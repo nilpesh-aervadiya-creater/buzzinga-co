@@ -4,6 +4,7 @@ export const NAV_LINKS = [
   { label: "Capabilities", href: "/ai-native-capabilities" },
   { label: "Projects", href: "/projects" },
   { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
 ] as const;
 
 export const SITE = {

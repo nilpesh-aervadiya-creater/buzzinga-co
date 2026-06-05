@@ -1,3 +1,16 @@
+export type BlogContentBlock =
+  | {
+      id: string;
+      type: "image";
+      value: string;
+      imageAlt?: string;
+    }
+  | {
+      id: string;
+      type: "description";
+      value: string;
+    };
+
 export type BlogPost = {
   id: string;
   title: string;
@@ -9,6 +22,7 @@ export type BlogPost = {
   image: string;
   imageAlt: string;
   published: boolean;
+  contentBlocks?: BlogContentBlock[];
 };
 
 export const BLOG_DEFAULT_IMAGES = [
