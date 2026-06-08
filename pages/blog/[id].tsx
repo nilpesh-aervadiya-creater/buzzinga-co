@@ -24,7 +24,7 @@ function formatDescriptionHtml(value: string) {
   const description = value.trim();
 
   if (/<[a-z][\s\S]*>/i.test(description)) {
-    return description;
+    return description.replace(/<p>\s*<br\s*\/?>\s*<\/p>/gi, "");
   }
 
   return description
@@ -124,7 +124,7 @@ export default function BlogPostPage({ post, nextPost }: BlogPostPageProps) {
                 return (
                   <div
                     key={block.id}
-                    className="ql-editor ql-editor-output w-full max-w-[600px] text-[16px] font-normal leading-6 text-[#262D30] min-[1280px]:text-[20px] min-[1280px]:leading-8 [&_a]:text-[#262D30] [&_a]:underline [&_code]:rounded-[4px] [&_code]:bg-[#F2F4F7] [&_code]:px-1 [&_h2]:mt-8 [&_h2]:mb-0 [&_h2]:text-[20px] [&_h2]:font-semibold [&_h2]:leading-[26px] [&_h2:first-child]:mt-0 min-[1280px]:[&_h2]:text-[40px] min-[1280px]:[&_h2]:leading-[48px] [&_h3]:mt-8 [&_h3]:mb-0 [&_h3]:text-[20px] [&_h3]:font-semibold [&_h3]:leading-[26px] [&_h3:first-child]:mt-0 min-[1280px]:[&_h3]:text-[40px] min-[1280px]:[&_h3]:leading-[48px] [&_li]:ml-5 [&_p]:mt-4 [&_p]:mb-0 [&_ul]:my-4 [&_ul]:list-disc"
+                    className="ql-editor ql-editor-output blog-rich-text w-full max-w-[600px] text-[#262D30] [&_a]:text-[#262D30] [&_a]:underline [&_code]:rounded-[4px] [&_code]:bg-[#F2F4F7] [&_code]:px-1 [&_li]:ml-5 [&_ul]:my-4 [&_ul]:list-disc"
                     dangerouslySetInnerHTML={{ __html: formatDescriptionHtml(block.value) }}
                   />
                 );
